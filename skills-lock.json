@@ -6,6 +6,12 @@
       "sourceType": "github",
       "skillPath": "packed-design/SKILL.md",
       "computedHash": "666b26edd929bd0adec96098d420518b47c9cbfafb266a10c46d7f3c0aed6dd8"
+    },
+    "packed-mobile-maintainer": {
+      "source": "trypacked-com/skills",
+      "sourceType": "github",
+      "skillPath": "packed-mobile-maintainer/SKILL.md",
+      "computedHash": "2007dc74eaaba41e493c07a7826900189f4c02f85b761a319ae46551e6663851"
     }
   }
 }
