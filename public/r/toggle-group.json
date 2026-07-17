@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle-group",
+  "type": "registry:ui",
+  "title": "Toggle Group",
+  "description": "Packed Toggle Group — warm, token-driven UI for React Native.",
+  "dependencies": [
+    "@rn-primitives/toggle-group",
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "@packed-native/text",
+    "@packed-native/toggle",
+    "@packed-native/utils",
+    "https://reactnativereusables.com/r/nativewind/icon.json"
+  ],
+  "files": [
+    {
+      "path": "components/ui/toggle-group.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/toggle-group.tsx",
+      "content": "import { Icon } from '@/components/ui/icon';\nimport { TextClassContext } from '@/components/ui/text';\nimport { toggleTextVariants, toggleVariants } from '@/components/ui/toggle';\nimport { cn } from '@/lib/utils';\nimport * as ToggleGroupPrimitive from '@rn-primitives/toggle-group';\nimport type { VariantProps } from 'class-variance-authority';\nimport { createContext, useContext, type ComponentProps } from 'react';\nimport { Platform } from 'react-native';\n\nconst ToggleGroupContext = createContext<VariantProps<typeof toggleVariants> | null>(null);\n\nfunction ToggleGroup({\n  className,\n  variant,\n  size,\n  children,\n  ...props\n}: ComponentProps<typeof ToggleGroupPrimitive.Root> & VariantProps<typeof toggleVariants>) {\n  return (\n    <ToggleGroupPrimitive.Root\n      className={cn(\n        'flex flex-row items-center rounded-md',\n        Platform.select({ web: 'w-fit' }),\n        variant === 'outline' && 'shadow-card',\n        className\n      )}\n      {...props}>\n      <ToggleGroupContext.Provider value={{ variant, size }}>\n        {children}\n      </ToggleGroupContext.Provider>\n    </ToggleGroupPrimitive.Root>\n  );\n}\n\nfunction useToggleGroupContext() {\n  const context = useContext(ToggleGroupContext);\n  if (context === null) {\n    throw new Error(\n      'ToggleGroup compound components cannot be rendered outside the ToggleGroup component'\n    );\n  }\n  return context;\n}\n\nfunction ToggleGroupItem({\n  className,\n  children,\n  variant,\n  size,\n  isFirst,\n  isLast,\n  ...props\n}: ComponentProps<typeof ToggleGroupPrimitive.Item> &\n  VariantProps<typeof toggleVariants> & {\n    isFirst?: boolean;\n    isLast?: boolean;\n  }) {\n  const context = useToggleGroupContext();\n  const { value } = ToggleGroupPrimitive.useRootContext();\n  const resolvedVariant = context.variant || variant;\n  const resolvedSize = context.size || size;\n  const selected = ToggleGroupPrimitive.utils.getIsSelected(value, props.value);\n\n  return (\n    <TextClassContext.Provider\n      value={cn(\n        toggleTextVariants({ variant: resolvedVariant, size: resolvedSize }),\n        selected\n          ? 'text-on-brand'\n          : Platform.select({ web: 'group-hover:text-brand' })\n      )}>\n      <ToggleGroupPrimitive.Item\n        className={cn(\n          toggleVariants({\n            variant: resolvedVariant,\n            size: resolvedSize,\n          }),\n          props.disabled && 'opacity-50',\n          selected && 'border-transparent bg-brand active:bg-brand-hover',\n          'min-w-0 shrink-0 rounded-none shadow-none',\n          isFirst && 'rounded-l-md',\n          isLast && 'rounded-r-md',\n          resolvedVariant === 'outline' && 'border-l-0',\n          resolvedVariant === 'outline' && isFirst && 'border-l',\n          Platform.select({\n            web: 'flex-1 focus:z-10 focus-visible:z-10',\n          }),\n          className\n        )}\n        {...props}>\n        {children}\n      </ToggleGroupPrimitive.Item>\n    </TextClassContext.Provider>\n  );\n}\n\nfunction ToggleGroupIcon({ className, ...props }: ComponentProps<typeof Icon>) {\n  const textClass = useContext(TextClassContext);\n  return <Icon className={cn('size-4 shrink-0', textClass, className)} {...props} />;\n}\n\nexport { ToggleGroup, ToggleGroupIcon, ToggleGroupItem };\n"
+    }
+  ]
+}

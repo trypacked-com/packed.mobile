@@ -400,6 +400,29 @@
       ]
     },
     {
+      "name": "toggle-group",
+      "type": "registry:ui",
+      "title": "Toggle Group",
+      "description": "Packed Toggle Group — warm, token-driven UI for React Native.",
+      "dependencies": [
+        "@rn-primitives/toggle-group",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@packed-native/text",
+        "@packed-native/toggle",
+        "@packed-native/utils",
+        "https://reactnativereusables.com/r/nativewind/icon.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/toggle-group.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/toggle-group.tsx"
+        }
+      ]
+    },
+    {
       "name": "tooltip",
       "type": "registry:ui",
       "title": "Tooltip",
