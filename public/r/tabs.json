@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs",
+  "type": "registry:ui",
+  "title": "Tabs",
+  "description": "Packed Tabs — warm, token-driven UI for React Native.",
+  "dependencies": [
+    "@rn-primitives/tabs"
+  ],
+  "registryDependencies": [
+    "@packed-native/text",
+    "@packed-native/utils"
+  ],
+  "files": [
+    {
+      "path": "components/ui/tabs.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/tabs.tsx",
+      "content": "import { TextClassContext } from '@/components/ui/text';\nimport { cn } from '@/lib/utils';\nimport * as TabsPrimitive from '@rn-primitives/tabs';\nimport { Platform } from 'react-native';\n\nfunction Tabs({\n  className,\n  ...props\n}: React.ComponentProps<typeof TabsPrimitive.Root>) {\n  return <TabsPrimitive.Root className={cn('flex flex-col gap-2', className)} {...props} />;\n}\n\nfunction TabsList({\n  className,\n  ...props\n}: React.ComponentProps<typeof TabsPrimitive.List>) {\n  return (\n    <TabsPrimitive.List\n      className={cn(\n        'bg-surface-sunken flex h-10 flex-row items-center justify-center rounded-xl p-1',\n        Platform.select({ web: 'inline-flex w-fit', native: 'mr-auto' }),\n        className\n      )}\n      {...props}\n    />\n  );\n}\n\nfunction TabsTrigger({\n  className,\n  ...props\n}: React.ComponentProps<typeof TabsPrimitive.Trigger>) {\n  const { value } = TabsPrimitive.useRootContext();\n  const isActive = value === props.value;\n\n  return (\n    <TextClassContext.Provider\n      value={cn(\n        'font-sans-medium text-sm',\n        isActive ? 'text-on-brand font-sans-semibold' : 'text-muted-foreground',\n        Platform.select({\n          web: !isActive ? 'group-hover:text-brand' : undefined,\n        })\n      )}>\n      <TabsPrimitive.Trigger\n        className={cn(\n          'group flex h-full flex-row items-center justify-center gap-1.5 rounded-lg border border-transparent px-3 py-1 shadow-none',\n          Platform.select({\n            web: 'focus-visible:border-border-brand focus-visible:ring-ring/40 inline-flex cursor-default whitespace-nowrap outline-none transition-all focus-visible:ring-[3px] disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0',\n          }),\n          props.disabled && 'opacity-50',\n          isActive && 'bg-brand shadow-cta active:bg-brand-hover',\n          !isActive &&\n            cn(\n              'active:bg-brand-subtle',\n              Platform.select({ web: 'hover:bg-brand-subtle' })\n            ),\n          className\n        )}\n        {...props}\n      />\n    </TextClassContext.Provider>\n  );\n}\n\nfunction TabsContent({\n  className,\n  ...props\n}: React.ComponentProps<typeof TabsPrimitive.Content>) {\n  return (\n    <TabsPrimitive.Content\n      className={cn(Platform.select({ web: 'flex-1 outline-none' }), className)}\n      {...props}\n    />\n  );\n}\n\nexport { Tabs, TabsContent, TabsList, TabsTrigger };\n"
+    }
+  ]
+}

@@ -318,6 +318,26 @@
       ]
     },
     {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "Packed Tabs — warm, token-driven UI for React Native.",
+      "dependencies": [
+        "@rn-primitives/tabs"
+      ],
+      "registryDependencies": [
+        "@packed-native/text",
+        "@packed-native/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/tabs.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/tabs.tsx"
+        }
+      ]
+    },
+    {
       "name": "text",
       "type": "registry:ui",
       "title": "Text",
