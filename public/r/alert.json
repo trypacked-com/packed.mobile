@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert",
+  "type": "registry:ui",
+  "title": "Alert",
+  "description": "Packed Alert — warm, token-driven UI for React Native.",
+  "dependencies": [
+    "class-variance-authority",
+    "lucide-react-native"
+  ],
+  "registryDependencies": [
+    "@packed-native/text",
+    "@packed-native/utils",
+    "https://reactnativereusables.com/r/nativewind/icon.json"
+  ],
+  "files": [
+    {
+      "path": "components/ui/alert.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/alert.tsx",
+      "content": "import { Icon } from '@/components/ui/icon';\nimport { Text, TextClassContext } from '@/components/ui/text';\nimport { cn } from '@/lib/utils';\nimport { cva, type VariantProps } from 'class-variance-authority';\nimport type { LucideIcon } from 'lucide-react-native';\nimport * as React from 'react';\nimport { View } from 'react-native';\n\nconst alertVariants = cva('relative w-full rounded-2xl border px-4 pb-2 pt-3.5', {\n  variants: {\n    variant: {\n      default: 'border-border-brand bg-brand-subtle',\n      destructive: 'border-status-cancel-fg/20 bg-status-cancel-bg',\n    },\n  },\n  defaultVariants: {\n    variant: 'default',\n  },\n});\n\nconst alertIconVariants = cva('size-4', {\n  variants: {\n    variant: {\n      default: 'text-brand',\n      destructive: 'text-status-cancel-fg',\n    },\n  },\n  defaultVariants: {\n    variant: 'default',\n  },\n});\n\nconst alertTextVariants = cva('text-sm', {\n  variants: {\n    variant: {\n      default: 'text-strong',\n      destructive: 'text-status-cancel-fg',\n    },\n  },\n  defaultVariants: {\n    variant: 'default',\n  },\n});\n\ntype AlertProps = React.ComponentProps<typeof View> &\n  React.RefAttributes<View> & {\n    icon: LucideIcon;\n    iconClassName?: string;\n  } & VariantProps<typeof alertVariants>;\n\nfunction Alert({ className, variant, children, icon, iconClassName, ...props }: AlertProps) {\n  return (\n    <TextClassContext.Provider value={alertTextVariants({ variant })}>\n      <View role=\"alert\" className={cn(alertVariants({ variant }), className)} {...props}>\n        <View className=\"absolute left-3.5 top-3\">\n          <Icon as={icon} className={cn(alertIconVariants({ variant }), iconClassName)} />\n        </View>\n        {children}\n      </View>\n    </TextClassContext.Provider>\n  );\n}\n\nfunction AlertTitle({ className, ...props }: React.ComponentProps<typeof Text>) {\n  return (\n    <Text\n      className={cn(\n        'mb-1 ml-0.5 min-h-4 pl-6 font-sans-semibold leading-none tracking-tight',\n        className\n      )}\n      {...props}\n    />\n  );\n}\n\nfunction AlertDescription({ className, ...props }: React.ComponentProps<typeof Text>) {\n  const textClass = React.useContext(TextClassContext);\n  return (\n    <Text\n      className={cn(\n        'text-muted-foreground ml-0.5 pb-1.5 pl-6 text-sm leading-relaxed',\n        textClass?.includes('text-status-cancel-fg') && 'text-status-cancel-fg/90',\n        className\n      )}\n      {...props}\n    />\n  );\n}\n\nexport { Alert, AlertDescription, AlertTitle, alertTextVariants, alertVariants };\nexport type { AlertProps };\n"
+    }
+  ]
+}

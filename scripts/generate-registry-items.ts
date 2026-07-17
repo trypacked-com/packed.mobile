@@ -8,6 +8,7 @@ const itemsDir = resolve(root, 'registry', 'items');
 // Components published from this repo's registry. Base RNR components that we
 // have not restyled (e.g. text, icon) are referenced by full URL instead.
 const PUBLISHED_UI: string[] = [
+  'alert',
   'avatar',
   'badge',
   'button',
