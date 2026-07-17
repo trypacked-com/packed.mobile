@@ -8,6 +8,7 @@ const itemsDir = resolve(root, 'registry', 'items');
 // Components published from this repo's registry. Base RNR components that we
 // have not restyled (e.g. text, icon) are referenced by full URL instead.
 const PUBLISHED_UI: string[] = [
+  'aspect-ratio',
   'avatar',
   'badge',
   'button',
@@ -28,6 +29,7 @@ const NPM_DEPS: Record<string, string[]> = {
   'class-variance-authority': ['cva', 'class-variance-authority'],
   clsx: ['clsx'],
   'tailwind-merge': ['tailwind-merge'],
+  '@rn-primitives/aspect-ratio': ['@rn-primitives/aspect-ratio'],
   '@rn-primitives/avatar': ['@rn-primitives/avatar'],
   '@rn-primitives/checkbox': ['@rn-primitives/checkbox'],
   '@rn-primitives/label': ['@rn-primitives/label'],

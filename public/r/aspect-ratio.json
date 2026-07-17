@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "aspect-ratio",
+  "type": "registry:ui",
+  "title": "Aspect Ratio",
+  "description": "Packed Aspect Ratio — warm, token-driven UI for React Native.",
+  "dependencies": [
+    "@rn-primitives/aspect-ratio"
+  ],
+  "registryDependencies": [
+    "@packed-native/utils"
+  ],
+  "files": [
+    {
+      "path": "components/ui/aspect-ratio.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/aspect-ratio.tsx",
+      "content": "import { cn } from '@/lib/utils';\nimport * as AspectRatioPrimitive from '@rn-primitives/aspect-ratio';\n\nfunction AspectRatio({\n  className,\n  ...props\n}: React.ComponentProps<typeof AspectRatioPrimitive.Root>) {\n  return (\n    <AspectRatioPrimitive.Root\n      className={cn('relative w-full overflow-hidden', className)}\n      {...props}\n    />\n  );\n}\n\nexport { AspectRatio };\n"
+    }
+  ]
+}

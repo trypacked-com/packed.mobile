@@ -4,6 +4,25 @@
   "homepage": "https://mobile.trypacked.dev/",
   "items": [
     {
+      "name": "aspect-ratio",
+      "type": "registry:ui",
+      "title": "Aspect Ratio",
+      "description": "Packed Aspect Ratio — warm, token-driven UI for React Native.",
+      "dependencies": [
+        "@rn-primitives/aspect-ratio"
+      ],
+      "registryDependencies": [
+        "@packed-native/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/aspect-ratio.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/aspect-ratio.tsx"
+        }
+      ]
+    },
+    {
       "name": "avatar",
       "type": "registry:ui",
       "title": "Avatar",
