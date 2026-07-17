@@ -10,6 +10,7 @@ const itemsDir = resolve(root, 'registry', 'items');
 const PUBLISHED_UI: string[] = [
   'accordion',
   'alert',
+  'alert-dialog',
   'aspect-ratio',
   'avatar',
   'badge',
@@ -41,6 +42,7 @@ const NPM_DEPS: Record<string, string[]> = {
   clsx: ['clsx'],
   'tailwind-merge': ['tailwind-merge'],
   '@rn-primitives/accordion': ['@rn-primitives/accordion'],
+  '@rn-primitives/alert-dialog': ['@rn-primitives/alert-dialog'],
   '@rn-primitives/aspect-ratio': ['@rn-primitives/aspect-ratio'],
   '@rn-primitives/avatar': ['@rn-primitives/avatar'],
   '@rn-primitives/checkbox': ['@rn-primitives/checkbox'],

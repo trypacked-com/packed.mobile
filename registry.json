@@ -49,6 +49,29 @@
       ]
     },
     {
+      "name": "alert-dialog",
+      "type": "registry:ui",
+      "title": "Alert Dialog",
+      "description": "Packed Alert Dialog — warm, token-driven UI for React Native.",
+      "dependencies": [
+        "@rn-primitives/alert-dialog",
+        "react-native-reanimated"
+      ],
+      "registryDependencies": [
+        "@packed-native/button",
+        "@packed-native/text",
+        "@packed-native/utils",
+        "https://reactnativereusables.com/r/nativewind/native-only-animated-view.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/alert-dialog.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/alert-dialog.tsx"
+        }
+      ]
+    },
+    {
       "name": "aspect-ratio",
       "type": "registry:ui",
       "title": "Aspect Ratio",

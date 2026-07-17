@@ -15,6 +15,7 @@
     "@expo-google-fonts/figtree": "^0.4.1",
     "@expo-google-fonts/lora": "^0.4.2",
     "@rn-primitives/accordion": "^1.5.2",
+    "@rn-primitives/alert-dialog": "^1.5.2",
     "@rn-primitives/aspect-ratio": "^1.5.2",
     "@rn-primitives/avatar": "^1.5.2",
     "@rn-primitives/checkbox": "^1.5.2",
