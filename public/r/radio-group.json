@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radio-group",
+  "type": "registry:ui",
+  "title": "Radio Group",
+  "description": "Packed Radio Group — warm, token-driven UI for React Native.",
+  "dependencies": [
+    "@rn-primitives/radio-group"
+  ],
+  "registryDependencies": [
+    "@packed-native/utils"
+  ],
+  "files": [
+    {
+      "path": "components/ui/radio-group.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/radio-group.tsx",
+      "content": "import { cn } from '@/lib/utils';\nimport * as RadioGroupPrimitive from '@rn-primitives/radio-group';\nimport { Platform } from 'react-native';\n\nfunction RadioGroup({\n  className,\n  ...props\n}: React.ComponentProps<typeof RadioGroupPrimitive.Root>) {\n  return <RadioGroupPrimitive.Root className={cn('gap-3', className)} {...props} />;\n}\n\nfunction RadioGroupItem({\n  className,\n  ...props\n}: React.ComponentProps<typeof RadioGroupPrimitive.Item>) {\n  return (\n    <RadioGroupPrimitive.Item\n      className={cn(\n        'border-border bg-background aspect-square size-4 shrink-0 items-center justify-center rounded-full border shadow-card',\n        Platform.select({\n          web: 'focus-visible:border-border-brand focus-visible:ring-ring/40 aria-invalid:ring-destructive/20 aria-invalid:border-destructive outline-none transition-all focus-visible:ring-[3px] disabled:cursor-not-allowed data-[state=checked]:border-brand',\n          native: 'aria-checked:border-brand',\n        }),\n        props.disabled && 'opacity-50',\n        className\n      )}\n      {...props}>\n      <RadioGroupPrimitive.Indicator className=\"bg-brand size-2 rounded-full\" />\n    </RadioGroupPrimitive.Item>\n  );\n}\n\nexport { RadioGroup, RadioGroupItem };\n"
+    }
+  ]
+}
