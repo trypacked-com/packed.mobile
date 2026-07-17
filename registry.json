@@ -65,6 +65,27 @@
       ]
     },
     {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "description": "Packed Checkbox — warm, token-driven UI for React Native.",
+      "dependencies": [
+        "@rn-primitives/checkbox",
+        "lucide-react-native"
+      ],
+      "registryDependencies": [
+        "@packed-native/utils",
+        "https://reactnativereusables.com/r/nativewind/icon.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/checkbox.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/checkbox.tsx"
+        }
+      ]
+    },
+    {
       "name": "input",
       "type": "registry:ui",
       "title": "Input",
