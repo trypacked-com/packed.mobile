@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle",
+  "type": "registry:ui",
+  "title": "Toggle",
+  "description": "Packed Toggle — warm, token-driven UI for React Native.",
+  "dependencies": [
+    "@rn-primitives/toggle",
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "@packed-native/text",
+    "@packed-native/utils",
+    "https://reactnativereusables.com/r/nativewind/icon.json"
+  ],
+  "files": [
+    {
+      "path": "components/ui/toggle.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/toggle.tsx",
+      "content": "import { Icon } from '@/components/ui/icon';\nimport { TextClassContext } from '@/components/ui/text';\nimport { cn } from '@/lib/utils';\nimport * as TogglePrimitive from '@rn-primitives/toggle';\nimport { cva, type VariantProps } from 'class-variance-authority';\nimport { useContext, type ComponentProps } from 'react';\nimport { Platform } from 'react-native';\n\nconst toggleVariants = cva(\n  cn(\n    'group shrink-0 flex-row items-center justify-center gap-2 rounded-md',\n    Platform.select({\n      web: 'focus-visible:border-border-brand focus-visible:ring-ring/40 aria-invalid:ring-destructive/20 aria-invalid:border-destructive inline-flex cursor-default whitespace-nowrap outline-none transition-all focus-visible:ring-[3px] disabled:pointer-events-none [&_svg]:pointer-events-none',\n    })\n  ),\n  {\n    variants: {\n      variant: {\n        default: cn(\n          'bg-transparent active:bg-brand-subtle',\n          Platform.select({ web: 'hover:bg-brand-subtle' })\n        ),\n        outline: cn(\n          'border-border bg-background active:bg-brand-subtle active:border-border-brand border shadow-card',\n          Platform.select({ web: 'hover:bg-brand-subtle hover:border-border-brand' })\n        ),\n      },\n      size: {\n        default: 'h-10 min-w-10 px-3',\n        sm: 'h-8 min-w-8 gap-1.5 px-2.5',\n        lg: 'h-12 min-w-12 gap-2.5 px-4',\n      },\n    },\n    defaultVariants: {\n      variant: 'default',\n      size: 'default',\n    },\n  }\n);\n\nconst toggleTextVariants = cva(\n  cn(\n    'font-sans-semibold text-sm',\n    Platform.select({ web: 'pointer-events-none transition-colors' })\n  ),\n  {\n    variants: {\n      variant: {\n        default: 'text-foreground',\n        outline: 'text-foreground',\n      },\n      size: {\n        default: 'text-sm',\n        sm: 'text-xs',\n        lg: 'text-base',\n      },\n    },\n    defaultVariants: {\n      variant: 'default',\n      size: 'default',\n    },\n  }\n);\n\ntype ToggleProps = ComponentProps<typeof TogglePrimitive.Root> &\n  VariantProps<typeof toggleVariants>;\n\nfunction Toggle({ className, variant, size, ...props }: ToggleProps) {\n  return (\n    <TextClassContext.Provider\n      value={cn(\n        toggleTextVariants({ variant, size }),\n        props.pressed\n          ? 'text-on-brand'\n          : Platform.select({ web: 'group-hover:text-brand' })\n      )}>\n      <TogglePrimitive.Root\n        className={cn(\n          toggleVariants({ variant, size }),\n          props.disabled && 'opacity-50',\n          props.pressed && 'border-transparent bg-brand shadow-cta active:bg-brand-hover',\n          className\n        )}\n        {...props}\n      />\n    </TextClassContext.Provider>\n  );\n}\n\nfunction ToggleIcon({ className, ...props }: ComponentProps<typeof Icon>) {\n  const textClass = useContext(TextClassContext);\n  return <Icon className={cn('size-4 shrink-0', textClass, className)} {...props} />;\n}\n\nexport { Toggle, ToggleIcon, toggleTextVariants, toggleVariants };\nexport type { ToggleProps };\n"
+    }
+  ]
+}

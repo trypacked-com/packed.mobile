@@ -25,6 +25,7 @@ const PUBLISHED_UI: string[] = [
   'switch',
   'text',
   'textarea',
+  'toggle',
 ];
 
 const NPM_DEPS: Record<string, string[]> = {
@@ -42,6 +43,7 @@ const NPM_DEPS: Record<string, string[]> = {
   '@rn-primitives/slot': ['@rn-primitives/slot'],
   '@rn-primitives/portal': ['@rn-primitives/portal'],
   '@rn-primitives/switch': ['@rn-primitives/switch'],
+  '@rn-primitives/toggle': ['@rn-primitives/toggle'],
   'lucide-react-native': ['lucide-react-native'],
   nativewind: ['nativewind'],
   'react-native-reanimated': ['react-native-reanimated'],

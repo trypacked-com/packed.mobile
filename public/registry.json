@@ -355,6 +355,28 @@
       ]
     },
     {
+      "name": "toggle",
+      "type": "registry:ui",
+      "title": "Toggle",
+      "description": "Packed Toggle — warm, token-driven UI for React Native.",
+      "dependencies": [
+        "@rn-primitives/toggle",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@packed-native/text",
+        "@packed-native/utils",
+        "https://reactnativereusables.com/r/nativewind/icon.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/toggle.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/toggle.tsx"
+        }
+      ]
+    },
+    {
       "name": "utils",
       "type": "registry:lib",
       "title": "Utils",
