@@ -234,6 +234,30 @@
       ]
     },
     {
+      "name": "dropdown-menu",
+      "type": "registry:ui",
+      "title": "Dropdown Menu",
+      "description": "Packed Dropdown Menu — warm, token-driven UI for React Native.",
+      "dependencies": [
+        "@rn-primitives/dropdown-menu",
+        "lucide-react-native",
+        "react-native-reanimated"
+      ],
+      "registryDependencies": [
+        "@packed-native/text",
+        "@packed-native/utils",
+        "https://reactnativereusables.com/r/nativewind/icon.json",
+        "https://reactnativereusables.com/r/nativewind/native-only-animated-view.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/dropdown-menu.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/dropdown-menu.tsx"
+        }
+      ]
+    },
+    {
       "name": "input",
       "type": "registry:ui",
       "title": "Input",
