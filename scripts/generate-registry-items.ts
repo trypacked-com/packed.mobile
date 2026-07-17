@@ -11,6 +11,7 @@ const PUBLISHED_UI: string[] = [
   'avatar',
   'badge',
   'button',
+  'input',
   'label',
   'separator',
   'skeleton',
