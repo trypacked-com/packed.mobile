@@ -5,45 +5,42 @@ import { Platform, Pressable } from 'react-native';
 
 const buttonVariants = cva(
   cn(
-    'group shrink-0 flex-row items-center justify-center gap-2 rounded-md shadow-none',
+    'group shrink-0 flex-row items-center justify-center gap-2 rounded-md',
     Platform.select({
-      web: "focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive whitespace-nowrap outline-none transition-all focus-visible:ring-[3px] disabled:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0",
+      web: "focus-visible:border-border-brand focus-visible:ring-ring/40 aria-invalid:ring-destructive/20 aria-invalid:border-destructive whitespace-nowrap outline-none transition-all focus-visible:ring-[3px] disabled:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0",
     })
   ),
   {
     variants: {
       variant: {
         default: cn(
-          'bg-primary active:bg-primary/90 shadow-sm shadow-black/5',
-          Platform.select({ web: 'hover:bg-primary/90' })
+          'bg-brand active:bg-brand-hover shadow-sm shadow-black/5',
+          Platform.select({ web: 'hover:bg-brand-hover' })
         ),
         destructive: cn(
-          'bg-destructive active:bg-destructive/90 dark:bg-destructive/60 shadow-sm shadow-black/5',
-          Platform.select({
-            web: 'hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40',
-          })
+          'bg-destructive active:bg-destructive/90 shadow-sm shadow-black/5',
+          Platform.select({ web: 'hover:bg-destructive/90 focus-visible:ring-destructive/40' })
         ),
         outline: cn(
-          'border-border bg-background active:bg-accent dark:bg-input/30 dark:border-input dark:active:bg-input/50 border shadow-sm shadow-black/5',
-          Platform.select({
-            web: 'hover:bg-accent dark:hover:bg-input/50',
-          })
+          'border-border bg-background active:bg-brand-subtle active:border-border-brand border',
+          Platform.select({ web: 'hover:bg-brand-subtle hover:border-border-brand' })
         ),
         secondary: cn(
-          'bg-secondary active:bg-secondary/80 shadow-sm shadow-black/5',
-          Platform.select({ web: 'hover:bg-secondary/80' })
+          'border-border bg-card active:bg-surface-sunken active:border-border-strong border shadow-sm shadow-black/5',
+          Platform.select({ web: 'hover:bg-surface-sunken hover:border-border-strong' })
         ),
         ghost: cn(
-          'active:bg-accent dark:active:bg-accent/50',
-          Platform.select({ web: 'hover:bg-accent dark:hover:bg-accent/50' })
+          'active:bg-brand-subtle',
+          Platform.select({ web: 'hover:bg-brand-subtle' })
         ),
         link: '',
       },
       size: {
-        default: cn('h-10 px-4 py-2 sm:h-9', Platform.select({ web: 'has-[>svg]:px-3' })),
-        sm: cn('h-9 gap-1.5 rounded-md px-3 sm:h-8', Platform.select({ web: 'has-[>svg]:px-2.5' })),
-        lg: cn('h-11 rounded-md px-6 sm:h-10', Platform.select({ web: 'has-[>svg]:px-4' })),
-        icon: 'h-10 w-10 sm:h-9 sm:w-9',
+        default: cn('h-10 px-5', Platform.select({ web: 'has-[>svg]:px-4' })),
+        xs: cn('h-6 gap-1 rounded-md px-2', Platform.select({ web: 'has-[>svg]:px-1.5' })),
+        sm: cn('h-8 gap-1.5 rounded-md px-3.5', Platform.select({ web: 'has-[>svg]:px-2.5' })),
+        lg: cn('h-12 gap-2.5 rounded-lg px-6', Platform.select({ web: 'has-[>svg]:px-5' })),
+        icon: 'h-10 w-10',
       },
     },
     defaultVariants: {
@@ -55,29 +52,30 @@ const buttonVariants = cva(
 
 const buttonTextVariants = cva(
   cn(
-    'text-foreground text-sm font-medium',
+    'text-foreground text-base font-semibold',
     Platform.select({ web: 'pointer-events-none transition-colors' })
   ),
   {
     variants: {
       variant: {
-        default: 'text-primary-foreground',
+        default: 'text-on-brand',
         destructive: 'text-white',
         outline: cn(
-          'group-active:text-accent-foreground',
-          Platform.select({ web: 'group-hover:text-accent-foreground' })
+          'text-foreground group-active:text-brand',
+          Platform.select({ web: 'group-hover:text-brand' })
         ),
-        secondary: 'text-secondary-foreground',
-        ghost: 'group-active:text-accent-foreground',
+        secondary: 'text-strong',
+        ghost: 'text-brand',
         link: cn(
-          'text-primary group-active:underline',
+          'text-link group-active:underline',
           Platform.select({ web: 'underline-offset-4 hover:underline group-hover:underline' })
         ),
       },
       size: {
-        default: '',
-        sm: '',
-        lg: '',
+        default: 'text-base',
+        xs: 'text-xs',
+        sm: 'text-sm',
+        lg: 'text-lg',
         icon: '',
       },
     },
@@ -88,7 +86,9 @@ const buttonTextVariants = cva(
   }
 );
 
-type ButtonProps = React.ComponentProps<typeof Pressable> & React.RefAttributes<typeof Pressable> & VariantProps<typeof buttonVariants>;
+type ButtonProps = React.ComponentProps<typeof Pressable> &
+  React.RefAttributes<typeof Pressable> &
+  VariantProps<typeof buttonVariants>;
 
 function Button({ className, variant, size, ...props }: ButtonProps) {
   return (

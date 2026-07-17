@@ -1,59 +1,69 @@
 import { Button } from '@/components/ui/button';
 import { Icon } from '@/components/ui/icon';
 import { Text } from '@/components/ui/text';
-import { Link, Stack } from 'expo-router';
+import { Stack } from 'expo-router';
 import { MoonStarIcon, StarIcon, SunIcon } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
 import * as React from 'react';
-import { Image, type ImageStyle, View } from 'react-native';
-
-const LOGO = {
-  light: require('@/assets/images/react-native-reusables-light.png'),
-  dark: require('@/assets/images/react-native-reusables-dark.png'),
-};
+import { ScrollView, View } from 'react-native';
 
 const SCREEN_OPTIONS = {
-  title: 'React Native Reusables',
+  title: 'Packed UI',
   headerTransparent: true,
   headerRight: () => <ThemeToggle />,
 };
 
-const IMAGE_STYLE: ImageStyle = {
-  height: 76,
-  width: 76,
-};
+const VARIANTS = ['default', 'secondary', 'outline', 'ghost', 'destructive', 'link'] as const;
+const SIZES = ['xs', 'sm', 'default', 'lg'] as const;
 
 export default function Screen() {
-  const { colorScheme } = useColorScheme();
-
   return (
     <>
       <Stack.Screen options={SCREEN_OPTIONS} />
-      <View className="flex-1 items-center justify-center gap-8 p-4">
-        <Image source={LOGO[colorScheme ?? 'light']} style={IMAGE_STYLE} resizeMode="contain" />
-        <View className="gap-2 p-4">
-          <Text className="ios:text-foreground font-mono text-sm text-muted-foreground">
-            1. Edit <Text variant="code">app/index.tsx</Text> to get started.
-          </Text>
-          <Text className="ios:text-foreground font-mono text-sm text-muted-foreground">
-            2. Save to see your changes instantly.
-          </Text>
-        </View>
-        <View className="flex-row gap-2">
-          <Link href="https://reactnativereusables.com" asChild>
-            <Button>
-              <Text>Browse the Docs</Text>
+      <ScrollView
+        className="flex-1 bg-background"
+        contentContainerClassName="gap-8 p-6 pt-24 pb-16">
+        <Section title="Variants">
+          {VARIANTS.map((variant) => (
+            <Button key={variant} variant={variant}>
+              <Text>{variant}</Text>
             </Button>
-          </Link>
-          <Link href="https://github.com/founded-labs/react-native-reusables" asChild>
-            <Button variant="ghost">
-              <Text>Star the Repo</Text>
-              <Icon as={StarIcon} />
+          ))}
+        </Section>
+
+        <Section title="Sizes">
+          {SIZES.map((size) => (
+            <Button key={size} size={size}>
+              <Text>{size}</Text>
             </Button>
-          </Link>
-        </View>
-      </View>
+          ))}
+          <Button size="icon" aria-label="Star">
+            <Icon as={StarIcon} />
+          </Button>
+        </Section>
+
+        <Section title="States">
+          <Button disabled>
+            <Text>Disabled</Text>
+          </Button>
+          <Button variant="outline">
+            <Icon as={StarIcon} />
+            <Text>With icon</Text>
+          </Button>
+        </Section>
+      </ScrollView>
     </>
+  );
+}
+
+function Section({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <View className="gap-3">
+      <Text variant="small" className="text-muted-foreground uppercase">
+        {title}
+      </Text>
+      <View className="gap-3">{children}</View>
+    </View>
   );
 }
 

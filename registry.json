@@ -4,6 +4,26 @@
   "homepage": "https://trypacked.github.io/packed.mobile/",
   "items": [
     {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "Packed Button — warm, token-driven UI for React Native.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@packed-native/utils",
+        "https://reactnativereusables.com/r/nativewind/text.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/button.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/button.tsx"
+        }
+      ]
+    },
+    {
       "name": "theme",
       "type": "registry:theme",
       "title": "Packed Theme",
