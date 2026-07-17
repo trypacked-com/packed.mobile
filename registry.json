@@ -45,6 +45,26 @@
       ]
     },
     {
+      "name": "label",
+      "type": "registry:ui",
+      "title": "Label",
+      "description": "Packed Label — warm, token-driven UI for React Native.",
+      "dependencies": [
+        "@rn-primitives/label",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@packed-native/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/label.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/label.tsx"
+        }
+      ]
+    },
+    {
       "name": "separator",
       "type": "registry:ui",
       "title": "Separator",
