@@ -24,6 +24,7 @@ const PUBLISHED_UI: string[] = [
   'separator',
   'skeleton',
   'switch',
+  'tabs',
   'text',
   'textarea',
   'toggle',
@@ -32,6 +33,7 @@ const PUBLISHED_UI: string[] = [
 ];
 
 const NPM_DEPS: Record<string, string[]> = {
+  '@rn-primitives/tabs': ['@rn-primitives/tabs'],
   '@rn-primitives/tooltip': ['@rn-primitives/tooltip'],
   'class-variance-authority': ['cva', 'class-variance-authority'],
   clsx: ['clsx'],
