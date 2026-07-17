@@ -4,6 +4,28 @@
   "homepage": "https://mobile.trypacked.dev/",
   "items": [
     {
+      "name": "alert",
+      "type": "registry:ui",
+      "title": "Alert",
+      "description": "Packed Alert — warm, token-driven UI for React Native.",
+      "dependencies": [
+        "class-variance-authority",
+        "lucide-react-native"
+      ],
+      "registryDependencies": [
+        "@packed-native/text",
+        "@packed-native/utils",
+        "https://reactnativereusables.com/r/nativewind/icon.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/alert.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/alert.tsx"
+        }
+      ]
+    },
+    {
       "name": "aspect-ratio",
       "type": "registry:ui",
       "title": "Aspect Ratio",
