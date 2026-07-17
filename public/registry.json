@@ -65,6 +65,24 @@
       ]
     },
     {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "Packed Card — warm, token-driven UI for React Native.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@packed-native/text",
+        "@packed-native/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/card.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/card.tsx"
+        }
+      ]
+    },
+    {
       "name": "checkbox",
       "type": "registry:ui",
       "title": "Checkbox",
