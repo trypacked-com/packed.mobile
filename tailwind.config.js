@@ -69,6 +69,16 @@ module.exports = {
           'info-bg': 'hsl(var(--status-info-bg))',
         },
       },
+      fontFamily: {
+        sans: ['Figtree_400Regular'],
+        'sans-medium': ['Figtree_500Medium'],
+        'sans-semibold': ['Figtree_600SemiBold'],
+        'sans-bold': ['Figtree_700Bold'],
+        serif: ['Lora_600SemiBold'],
+        'serif-bold': ['Lora_700Bold'],
+        mono: ['DMMono_400Regular'],
+        'mono-medium': ['DMMono_500Medium'],
+      },
       borderRadius: {
         xs: '6px',
         sm: '8px',
@@ -81,6 +91,11 @@ module.exports = {
       },
       borderWidth: {
         hairline: hairlineWidth(),
+      },
+      boxShadow: {
+        card: '0px 2px 8px rgba(56, 50, 43, 0.10)',
+        'card-hover': '0px 6px 16px rgba(56, 50, 43, 0.12)',
+        cta: '0px 8px 22px rgba(237, 84, 24, 0.28)',
       },
       keyframes: {
         'accordion-down': {

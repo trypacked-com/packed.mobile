@@ -17,6 +17,6 @@
     "hooks": "@/hooks"
   },
   "registries": {
-    "@packed-native": "https://trypacked.github.io/packed.mobile/r/{name}.json"
+    "@packed-native": "https://mobile.trypacked.dev/r/{name}.json"
   }
 }

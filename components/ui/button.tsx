@@ -14,11 +14,11 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: cn(
-          'bg-brand active:bg-brand-hover shadow-sm shadow-black/5',
+          'bg-brand active:bg-brand-hover shadow-cta',
           Platform.select({ web: 'hover:bg-brand-hover' })
         ),
         destructive: cn(
-          'bg-destructive active:bg-destructive/90 shadow-sm shadow-black/5',
+          'bg-destructive active:bg-destructive/90 shadow-card',
           Platform.select({ web: 'hover:bg-destructive/90 focus-visible:ring-destructive/40' })
         ),
         outline: cn(
@@ -26,7 +26,7 @@ const buttonVariants = cva(
           Platform.select({ web: 'hover:bg-brand-subtle hover:border-border-brand' })
         ),
         secondary: cn(
-          'border-border bg-card active:bg-surface-sunken active:border-border-strong border shadow-sm shadow-black/5',
+          'border-border bg-card active:bg-surface-sunken active:border-border-strong border shadow-card',
           Platform.select({ web: 'hover:bg-surface-sunken hover:border-border-strong' })
         ),
         ghost: cn(
@@ -52,7 +52,7 @@ const buttonVariants = cva(
 
 const buttonTextVariants = cva(
   cn(
-    'text-foreground text-base font-semibold',
+    'text-foreground font-sans-semibold text-base',
     Platform.select({ web: 'pointer-events-none transition-colors' })
   ),
   {

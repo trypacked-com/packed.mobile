@@ -32,10 +32,10 @@ export default function Screen() {
         className="flex-1 bg-background"
         contentContainerClassName="gap-16 px-6 pb-20 pt-6">
         <View className="gap-5">
-          <Text className="text-brand text-xs font-semibold uppercase tracking-widest">
+          <Text className="text-brand font-sans-semibold text-xs uppercase tracking-widest">
             Packed design system
           </Text>
-          <Text className="text-strong text-4xl font-bold leading-tight tracking-tight">
+          <Text className="text-strong font-serif text-4xl leading-tight tracking-tight">
             Warm, sunset-led React Native components.
           </Text>
           <Text className="text-muted-foreground text-base leading-relaxed">
@@ -46,7 +46,7 @@ export default function Screen() {
         </View>
 
         <View className="gap-5">
-          <Text className="text-strong text-xl font-bold tracking-tight">Components</Text>
+          <Text className="text-strong font-serif text-xl tracking-tight">Components</Text>
           {COMPONENTS.map((component) => (
             <ComponentCard key={component.name} {...component} />
           ))}
@@ -74,10 +74,10 @@ function ComponentCard({
   return (
     <View className="gap-4">
       <View className="gap-1.5">
-        <Text className="text-strong text-lg font-semibold">{title}</Text>
+        <Text className="text-strong font-sans-semibold text-lg">{title}</Text>
         <Text className="text-muted-foreground text-sm leading-relaxed">{description}</Text>
       </View>
-      <View className="items-center justify-center rounded-2xl border border-border-subtle bg-card p-6 shadow-sm">
+      <View className="items-center justify-center rounded-2xl border border-border-subtle bg-card p-6 shadow-card">
         <Preview />
       </View>
       <Snippet>{install}</Snippet>
@@ -136,8 +136,8 @@ function Snippet({ children }: { children: string }) {
 
 function Wordmark() {
   return (
-    <Text className="text-strong text-lg font-bold tracking-tight">
-      Packed<Text className="text-brand text-lg font-bold">.ui</Text>
+    <Text className="text-strong font-serif text-lg tracking-tight">
+      Packed<Text className="text-brand font-serif text-lg">.ui</Text>
     </Text>
   );
 }
