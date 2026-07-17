@@ -16,6 +16,7 @@ const PUBLISHED_UI: string[] = [
   'separator',
   'skeleton',
   'text',
+  'textarea',
 ];
 
 const NPM_DEPS: Record<string, string[]> = {
