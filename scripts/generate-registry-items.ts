@@ -27,9 +27,11 @@ const PUBLISHED_UI: string[] = [
   'text',
   'textarea',
   'toggle',
+  'tooltip',
 ];
 
 const NPM_DEPS: Record<string, string[]> = {
+  '@rn-primitives/tooltip': ['@rn-primitives/tooltip'],
   'class-variance-authority': ['cva', 'class-variance-authority'],
   clsx: ['clsx'],
   'tailwind-merge': ['tailwind-merge'],
