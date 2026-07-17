@@ -15,6 +15,7 @@ const PUBLISHED_UI: string[] = [
   'label',
   'separator',
   'skeleton',
+  'switch',
   'text',
 ];
 
@@ -27,6 +28,7 @@ const NPM_DEPS: Record<string, string[]> = {
   '@rn-primitives/separator': ['@rn-primitives/separator'],
   '@rn-primitives/slot': ['@rn-primitives/slot'],
   '@rn-primitives/portal': ['@rn-primitives/portal'],
+  '@rn-primitives/switch': ['@rn-primitives/switch'],
   'lucide-react-native': ['lucide-react-native'],
   nativewind: ['nativewind'],
   'react-native-reanimated': ['react-native-reanimated'],
