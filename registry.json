@@ -104,6 +104,25 @@
       ]
     },
     {
+      "name": "collapsible",
+      "type": "registry:ui",
+      "title": "Collapsible",
+      "description": "Packed Collapsible — warm, token-driven UI for React Native.",
+      "dependencies": [
+        "@rn-primitives/collapsible"
+      ],
+      "registryDependencies": [
+        "@packed-native/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/collapsible.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/collapsible.tsx"
+        }
+      ]
+    },
+    {
       "name": "input",
       "type": "registry:ui",
       "title": "Input",
