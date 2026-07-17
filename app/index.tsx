@@ -1,11 +1,8 @@
-import { Button } from '@/components/ui/button';
-import { Icon } from '@/components/ui/icon';
+import { Snippet, ThemeToggle, Wordmark } from '@/components/docs/chrome';
 import { Text } from '@/components/ui/text';
-import { Stack } from 'expo-router';
-import { BellIcon, MoonStarIcon, PlusIcon, SunIcon } from 'lucide-react-native';
-import { useColorScheme } from 'nativewind';
-import * as React from 'react';
-import { ScrollView, View } from 'react-native';
+import registry from '@/registry.json';
+import { Link, Stack } from 'expo-router';
+import { Pressable, ScrollView, View } from 'react-native';
 
 const SCREEN_OPTIONS = {
   headerTitle: () => <Wordmark />,
@@ -13,16 +10,16 @@ const SCREEN_OPTIONS = {
   headerShadowVisible: false,
 };
 
-const COMPONENTS = [
-  {
-    name: 'button',
-    title: 'Button',
-    description:
-      "Packed's primary action button — warm, rounded, with a soft brand glow on the primary variant.",
-    install: 'npx @react-native-reusables/cli add @packed-native/button',
-    Preview: ButtonPreview,
-  },
-];
+type RegistryItem = {
+  name: string;
+  type: string;
+  title?: string;
+  description?: string;
+};
+
+const COMPONENTS = (registry.items as RegistryItem[])
+  .filter((item) => item.type === 'registry:ui')
+  .sort((a, b) => a.name.localeCompare(b.name));
 
 export default function Screen() {
   return (
@@ -48,7 +45,18 @@ export default function Screen() {
         <View className="gap-5">
           <Text className="text-strong font-serif text-xl tracking-tight">Components</Text>
           {COMPONENTS.map((component) => (
-            <ComponentCard key={component.name} {...component} />
+            <Link key={component.name} href={`/components/${component.name}`} asChild>
+              <Pressable className="gap-1.5 active:opacity-70">
+                <Text className="text-strong font-sans-semibold text-lg">
+                  {component.title ?? component.name}
+                </Text>
+                {component.description ? (
+                  <Text className="text-muted-foreground text-sm leading-relaxed">
+                    {component.description}
+                  </Text>
+                ) : null}
+              </Pressable>
+            </Link>
           ))}
         </View>
 
@@ -57,106 +65,5 @@ export default function Screen() {
         </Text>
       </ScrollView>
     </>
-  );
-}
-
-function ComponentCard({
-  title,
-  description,
-  install,
-  Preview,
-}: {
-  title: string;
-  description: string;
-  install: string;
-  Preview: React.ComponentType;
-}) {
-  return (
-    <View className="gap-4">
-      <View className="gap-1.5">
-        <Text className="text-strong font-sans-semibold text-lg">{title}</Text>
-        <Text className="text-muted-foreground text-sm leading-relaxed">{description}</Text>
-      </View>
-      <View className="items-center justify-center rounded-2xl border border-border-subtle bg-card p-6 shadow-card">
-        <Preview />
-      </View>
-      <Snippet>{install}</Snippet>
-    </View>
-  );
-}
-
-function ButtonPreview() {
-  return (
-    <View className="items-center gap-3">
-      <View className="flex-row flex-wrap items-center justify-center gap-2">
-        <Button>
-          <Icon as={PlusIcon} />
-          <Text>Add flight</Text>
-        </Button>
-        <Button variant="secondary">
-          <Text>Save draft</Text>
-        </Button>
-        <Button variant="ghost">
-          <Text>Cancel</Text>
-        </Button>
-      </View>
-      <View className="flex-row flex-wrap items-center justify-center gap-2">
-        <Button variant="destructive">
-          <Text>Remove trip</Text>
-        </Button>
-        <Button variant="outline">
-          <Text>View details</Text>
-        </Button>
-      </View>
-      <View className="flex-row flex-wrap items-center justify-center gap-2">
-        <Button size="sm">
-          <Text>Small</Text>
-        </Button>
-        <Button size="default">
-          <Text>Default</Text>
-        </Button>
-        <Button size="lg">
-          <Text>Large</Text>
-        </Button>
-        <Button size="icon" variant="secondary" aria-label="Notifications">
-          <Icon as={BellIcon} />
-        </Button>
-      </View>
-    </View>
-  );
-}
-
-function Snippet({ children }: { children: string }) {
-  return (
-    <View className="rounded-md bg-surface-sunken p-4">
-      <Text className="text-strong font-mono text-sm">{children}</Text>
-    </View>
-  );
-}
-
-function Wordmark() {
-  return (
-    <Text className="text-strong font-serif text-lg tracking-tight">
-      Packed<Text className="text-brand font-serif text-lg">.mobile</Text>
-    </Text>
-  );
-}
-
-const THEME_ICONS = {
-  light: SunIcon,
-  dark: MoonStarIcon,
-};
-
-function ThemeToggle() {
-  const { colorScheme, toggleColorScheme } = useColorScheme();
-
-  return (
-    <Button
-      onPressIn={toggleColorScheme}
-      size="icon"
-      variant="ghost"
-      className="ios:size-9 rounded-full web:mx-4">
-      <Icon as={THEME_ICONS[colorScheme ?? 'light']} className="size-5" />
-    </Button>
   );
 }

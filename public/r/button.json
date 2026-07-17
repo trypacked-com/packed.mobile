@@ -8,8 +8,8 @@
     "class-variance-authority"
   ],
   "registryDependencies": [
-    "@packed-native/utils",
-    "https://reactnativereusables.com/r/nativewind/text.json"
+    "@packed-native/text",
+    "@packed-native/utils"
   ],
   "files": [
     {

@@ -12,14 +12,34 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "@packed-native/utils",
-        "https://reactnativereusables.com/r/nativewind/text.json"
+        "@packed-native/text",
+        "@packed-native/utils"
       ],
       "files": [
         {
           "path": "components/ui/button.tsx",
           "type": "registry:ui",
           "target": "components/ui/button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "text",
+      "type": "registry:ui",
+      "title": "Text",
+      "description": "Packed Text — warm, token-driven UI for React Native.",
+      "dependencies": [
+        "@rn-primitives/slot",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@packed-native/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/text.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/text.tsx"
         }
       ]
     },
