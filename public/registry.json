@@ -4,6 +4,27 @@
   "homepage": "https://mobile.trypacked.dev/",
   "items": [
     {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "Packed Badge — warm, token-driven UI for React Native.",
+      "dependencies": [
+        "@rn-primitives/slot",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@packed-native/text",
+        "@packed-native/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/badge.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/badge.tsx"
+        }
+      ]
+    },
+    {
       "name": "button",
       "type": "registry:ui",
       "title": "Button",
