@@ -187,6 +187,30 @@
       ]
     },
     {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "description": "Packed Dialog — warm, token-driven UI for React Native.",
+      "dependencies": [
+        "@rn-primitives/dialog",
+        "lucide-react-native",
+        "react-native-reanimated"
+      ],
+      "registryDependencies": [
+        "@packed-native/text",
+        "@packed-native/utils",
+        "https://reactnativereusables.com/r/nativewind/icon.json",
+        "https://reactnativereusables.com/r/nativewind/native-only-animated-view.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/dialog.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/dialog.tsx"
+        }
+      ]
+    },
+    {
       "name": "input",
       "type": "registry:ui",
       "title": "Input",

@@ -13,6 +13,7 @@
         "@rn-primitives/avatar": "^1.5.2",
         "@rn-primitives/checkbox": "^1.5.2",
         "@rn-primitives/collapsible": "^1.5.2",
+        "@rn-primitives/dialog": "^1.5.2",
         "@rn-primitives/label": "^1.5.2",
         "@rn-primitives/popover": "^1.5.2",
         "@rn-primitives/portal": "~1.4.0",
@@ -434,6 +435,8 @@
     "@rn-primitives/checkbox": ["@rn-primitives/checkbox@1.5.2", "", { "dependencies": { "@radix-ui/react-checkbox": "^1.3.3", "@rn-primitives/hooks": "1.5.2", "@rn-primitives/slot": "1.5.2", "@rn-primitives/types": "1.5.2" }, "peerDependencies": { "react": "*", "react-native": "*", "react-native-web": "*" }, "optionalPeers": ["react-native", "react-native-web"] }, "sha512-wZzxfDHms+DKCiZssbM3KUuDg2A7dmRDLTHhAyq/QPqaxSwvzp7O6ul/E6fmiSQ2s+A37UwjBTzCNoSNGYexdQ=="],
 
     "@rn-primitives/collapsible": ["@rn-primitives/collapsible@1.5.2", "", { "dependencies": { "@radix-ui/react-collapsible": "^1.1.12", "@rn-primitives/hooks": "1.5.2", "@rn-primitives/slot": "1.5.2", "@rn-primitives/types": "1.5.2" }, "peerDependencies": { "react": "*", "react-native": "*", "react-native-web": "*" }, "optionalPeers": ["react-native", "react-native-web"] }, "sha512-3DZMwwAsCRqGdTL+D0mFQPuXmZaio0phlo5qNmoZFtxIOp51K343B07+JU6rcQWgSBKn7RTpkviCTJN2gAP3EQ=="],
+
+    "@rn-primitives/dialog": ["@rn-primitives/dialog@1.5.2", "", { "dependencies": { "@radix-ui/react-dialog": "^1.1.15", "@rn-primitives/hooks": "1.5.2", "@rn-primitives/slot": "1.5.2", "@rn-primitives/types": "1.5.2" }, "peerDependencies": { "@rn-primitives/portal": "*", "react": "*", "react-native": "*", "react-native-web": "*" }, "optionalPeers": ["react-native", "react-native-web"] }, "sha512-FNrpYIULeZpFY5VFIaaU2EH1VxF52B4AfNlqic9eAKG74JAtRSoew/IMJOnsH4ujR/AA4I+9JZGZ35adFuc7DA=="],
 
     "@rn-primitives/hooks": ["@rn-primitives/hooks@1.5.2", "", { "dependencies": { "@rn-primitives/types": "1.5.2" }, "peerDependencies": { "react": "*", "react-native": "*", "react-native-web": "*" }, "optionalPeers": ["react-native", "react-native-web"] }, "sha512-7XUVqR/nS309Fpltd19GflRTUPE/bYwZnOh/ofEDw7UMMelfI5CIgc70BXfZPHAkrjG9/tU3JAZl0KWSrWLJCQ=="],
 
