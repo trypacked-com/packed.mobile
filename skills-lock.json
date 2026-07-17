@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "packed-design": {
+      "source": "trypacked-com/skills",
+      "sourceType": "github",
+      "skillPath": "packed-design/SKILL.md",
+      "computedHash": "666b26edd929bd0adec96098d420518b47c9cbfafb266a10c46d7f3c0aed6dd8"
+    }
+  }
+}
