@@ -7,7 +7,7 @@ const itemsDir = resolve(root, 'registry', 'items');
 
 // Components published from this repo's registry. Base RNR components that we
 // have not restyled (e.g. text, icon) are referenced by full URL instead.
-const PUBLISHED_UI: string[] = ['badge', 'button', 'label', 'separator', 'text'];
+const PUBLISHED_UI: string[] = ['badge', 'button', 'label', 'separator', 'skeleton', 'text'];
 
 const NPM_DEPS: Record<string, string[]> = {
   'class-variance-authority': ['cva', 'class-variance-authority'],
