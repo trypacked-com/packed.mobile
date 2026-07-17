@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar",
+  "type": "registry:ui",
+  "title": "Avatar",
+  "description": "Packed Avatar — warm, token-driven UI for React Native.",
+  "dependencies": [
+    "@rn-primitives/avatar"
+  ],
+  "registryDependencies": [
+    "@packed-native/text",
+    "@packed-native/utils"
+  ],
+  "files": [
+    {
+      "path": "components/ui/avatar.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/avatar.tsx",
+      "content": "import { TextClassContext } from '@/components/ui/text';\nimport { cn } from '@/lib/utils';\nimport * as AvatarPrimitive from '@rn-primitives/avatar';\n\nfunction Avatar({\n  className,\n  ...props\n}: React.ComponentProps<typeof AvatarPrimitive.Root>) {\n  return (\n    <AvatarPrimitive.Root\n      className={cn(\n        'relative flex size-8 shrink-0 overflow-hidden rounded-full border border-border-subtle bg-card',\n        className\n      )}\n      {...props}\n    />\n  );\n}\n\nfunction AvatarImage({\n  className,\n  ...props\n}: React.ComponentProps<typeof AvatarPrimitive.Image>) {\n  return <AvatarPrimitive.Image className={cn('aspect-square size-full', className)} {...props} />;\n}\n\nfunction AvatarFallback({\n  className,\n  ...props\n}: React.ComponentProps<typeof AvatarPrimitive.Fallback>) {\n  return (\n    <TextClassContext.Provider value=\"text-strong font-sans-medium text-xs\">\n      <AvatarPrimitive.Fallback\n        className={cn(\n          'bg-surface-sunken flex size-full flex-row items-center justify-center rounded-full',\n          className\n        )}\n        {...props}\n      />\n    </TextClassContext.Provider>\n  );\n}\n\nexport { Avatar, AvatarFallback, AvatarImage };\n"
+    }
+  ]
+}

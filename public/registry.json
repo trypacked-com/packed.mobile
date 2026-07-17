@@ -4,6 +4,26 @@
   "homepage": "https://mobile.trypacked.dev/",
   "items": [
     {
+      "name": "avatar",
+      "type": "registry:ui",
+      "title": "Avatar",
+      "description": "Packed Avatar — warm, token-driven UI for React Native.",
+      "dependencies": [
+        "@rn-primitives/avatar"
+      ],
+      "registryDependencies": [
+        "@packed-native/text",
+        "@packed-native/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/avatar.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/avatar.tsx"
+        }
+      ]
+    },
+    {
       "name": "badge",
       "type": "registry:ui",
       "title": "Badge",
