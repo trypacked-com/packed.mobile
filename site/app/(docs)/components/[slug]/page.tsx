@@ -3,6 +3,7 @@ import { resolve } from "node:path";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+import { ComponentPreview } from "@/app/(docs)/components/component-preview";
 import registry from "../../../../../registry.json";
 
 type RegistryFile = { path: string; type: string; target?: string };
@@ -67,6 +68,11 @@ export default async function ComponentPage({
           </p>
         ) : null}
       </div>
+
+      <section className="space-y-3">
+        <h2 className="pk-eyebrow">Preview</h2>
+        <ComponentPreview slug={slug} />
+      </section>
 
       <section className="space-y-3">
         <h2 className="pk-eyebrow">Install</h2>
