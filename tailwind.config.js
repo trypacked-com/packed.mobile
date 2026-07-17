@@ -9,14 +9,29 @@ module.exports = {
     extend: {
       colors: {
         border: 'hsl(var(--border))',
+        'border-subtle': 'hsl(var(--border-subtle))',
+        'border-strong': 'hsl(var(--border-strong))',
+        'border-brand': 'hsl(var(--border-brand))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
+        strong: 'hsl(var(--strong))',
+        'muted-text': 'hsl(var(--muted-text))',
+        subtle: 'hsl(var(--subtle))',
+        link: 'hsl(var(--link))',
+        'surface-sunken': 'hsl(var(--surface-sunken))',
         primary: {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',
         },
+        brand: {
+          DEFAULT: 'hsl(var(--brand))',
+          hover: 'hsl(var(--brand-hover))',
+          press: 'hsl(var(--brand-press))',
+          subtle: 'hsl(var(--brand-subtle))',
+        },
+        'on-brand': 'hsl(var(--on-brand))',
         secondary: {
           DEFAULT: 'hsl(var(--secondary))',
           foreground: 'hsl(var(--secondary-foreground))',
@@ -32,6 +47,8 @@ module.exports = {
         accent: {
           DEFAULT: 'hsl(var(--accent))',
           foreground: 'hsl(var(--accent-foreground))',
+          subtle: 'hsl(var(--accent-subtle))',
+          hover: 'hsl(var(--accent-hover))',
         },
         popover: {
           DEFAULT: 'hsl(var(--popover))',
@@ -41,11 +58,26 @@ module.exports = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
+        status: {
+          'ontime-fg': 'hsl(var(--status-ontime-fg))',
+          'ontime-bg': 'hsl(var(--status-ontime-bg))',
+          'delay-fg': 'hsl(var(--status-delay-fg))',
+          'delay-bg': 'hsl(var(--status-delay-bg))',
+          'cancel-fg': 'hsl(var(--status-cancel-fg))',
+          'cancel-bg': 'hsl(var(--status-cancel-bg))',
+          'info-fg': 'hsl(var(--status-info-fg))',
+          'info-bg': 'hsl(var(--status-info-bg))',
+        },
       },
       borderRadius: {
-        lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)',
+        xs: '6px',
+        sm: '8px',
+        md: '12px',
+        lg: '16px',
+        xl: '20px',
+        '2xl': '28px',
+        '3xl': '36px',
+        pill: '999px',
       },
       borderWidth: {
         hairline: hairlineWidth(),

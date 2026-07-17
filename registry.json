@@ -1,0 +1,47 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "packed-native-registry",
+  "homepage": "https://trypacked.github.io/packed.mobile/",
+  "items": [
+    {
+      "name": "theme",
+      "type": "registry:theme",
+      "title": "Packed Theme",
+      "description": "Warm sand + sunset orange tokens for NativeWind — global.css + tailwind.config.js.",
+      "dependencies": [
+        "nativewind",
+        "tailwindcss",
+        "tailwindcss-animate"
+      ],
+      "files": [
+        {
+          "path": "global.css",
+          "type": "registry:file",
+          "target": "global.css"
+        },
+        {
+          "path": "tailwind.config.js",
+          "type": "registry:file",
+          "target": "tailwind.config.js"
+        }
+      ]
+    },
+    {
+      "name": "utils",
+      "type": "registry:lib",
+      "title": "Utils",
+      "description": "cn() class-merge helper (clsx + tailwind-merge).",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib",
+          "target": "lib/utils.ts"
+        }
+      ]
+    }
+  ]
+}

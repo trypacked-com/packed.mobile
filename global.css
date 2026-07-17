@@ -4,55 +4,100 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
+    /* shadcn/RNR semantic aliases → Packed tokens */
+    --background: 33 52.9% 96.7%;
+    --foreground: 32 13.1% 19.4%;
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
+    --card-foreground: 32 13.1% 19.4%;
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 63%;
-    --radius: 0.625rem;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
+    --popover-foreground: 32 13.1% 19.4%;
+    --primary: 18 100% 58.6%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 32 42.9% 93.1%;
+    --secondary-foreground: 38 13.3% 11.8%;
+    --muted: 32 42.9% 93.1%;
+    --muted-foreground: 34 12.7% 38.6%;
+    --accent: 207 69.6% 51%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 63% 46.7%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 33 27.6% 79.4%;
+    --input: 33 27.6% 79.4%;
+    --ring: 18 100% 58.6%;
+    --radius: 0.75rem;
+
+    /* Packed-named extras */
+    --brand: 18 100% 58.6%;
+    --brand-hover: 17 85.5% 51.2%;
+    --brand-press: 16 85.8% 41.4%;
+    --brand-subtle: 20 100% 96.5%;
+    --on-brand: 0 0% 100%;
+    --accent-subtle: 205 81% 95.9%;
+    --accent-hover: 207 72% 42%;
+    --surface-sunken: 32 42.9% 93.1%;
+    --strong: 38 13.3% 11.8%;
+    --muted-text: 34 12.7% 38.6%;
+    --subtle: 34 12.9% 51.4%;
+    --link: 16 85.8% 41.4%;
+    --border-subtle: 33 34.4% 87.5%;
+    --border-strong: 33 20.2% 65.1%;
+    --border-brand: 20 100% 71.6%;
+
+    /* Status fg/bg pairs */
+    --status-ontime-fg: 149 55.7% 25.7%;
+    --status-ontime-bg: 146 43.8% 93.7%;
+    --status-delay-fg: 40 89.1% 32.4%;
+    --status-delay-bg: 39 92% 95.1%;
+    --status-cancel-fg: 0 62.5% 37.6%;
+    --status-cancel-bg: 0 81% 95.9%;
+    --status-info-fg: 207 70.9% 33.7%;
+    --status-info-bg: 205 81% 95.9%;
   }
 
   .dark:root {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 70.9% 59.4%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 300 0% 45%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    --background: 30 13% 9%;
+    --foreground: 38 33.3% 85.9%;
+    --card: 38 13.3% 11.8%;
+    --card-foreground: 38 33.3% 85.9%;
+    --popover: 38 13.3% 11.8%;
+    --popover-foreground: 38 33.3% 85.9%;
+    --primary: 19 100% 63.9%;
+    --primary-foreground: 25 30% 7.8%;
+    --secondary: 30 17.6% 6.7%;
+    --secondary-foreground: 34 46.7% 94.1%;
+    --muted: 30 17.6% 6.7%;
+    --muted-foreground: 36 17.4% 63.9%;
+    --accent: 205 68.4% 55.3%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 63% 46.7%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 33 15.8% 22.4%;
+    --input: 33 15.8% 22.4%;
+    --ring: 19 100% 63.9%;
+
+    --brand: 19 100% 63.9%;
+    --brand-hover: 20 100% 71.6%;
+    --brand-press: 18 100% 58.6%;
+    --brand-subtle: 23 40% 11.8%;
+    --on-brand: 25 30% 7.8%;
+    --accent-subtle: 207 50% 14.1%;
+    --accent-hover: 207 72% 42%;
+    --surface-sunken: 30 17.6% 6.7%;
+    --strong: 34 46.7% 94.1%;
+    --muted-text: 36 17.4% 63.9%;
+    --subtle: 35 11.6% 48.8%;
+    --link: 20 100% 71.6%;
+    --border-subtle: 32 14.9% 17.1%;
+    --border-strong: 33 16.2% 29%;
+    --border-brand: 18 100% 58.6%;
+
+    --status-ontime-fg: 146 54% 63.3%;
+    --status-ontime-bg: 148 40% 11.8%;
+    --status-delay-fg: 40 82.6% 66.3%;
+    --status-delay-bg: 41 46.7% 11.8%;
+    --status-cancel-fg: 0 77.3% 74.1%;
+    --status-cancel-bg: 0 37.3% 13.1%;
+    --status-info-fg: 205 77.8% 71.8%;
+    --status-info-bg: 207 50% 14.1%;
   }
 }

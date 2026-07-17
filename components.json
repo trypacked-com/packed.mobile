@@ -15,5 +15,8 @@
     "ui": "@/components/ui",
     "lib": "@/lib",
     "hooks": "@/hooks"
+  },
+  "registries": {
+    "@packed-native": "https://trypacked.github.io/packed.mobile/r/{name}.json"
   }
 }
