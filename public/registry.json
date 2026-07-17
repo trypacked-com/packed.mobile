@@ -24,6 +24,25 @@
       ]
     },
     {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "Separator",
+      "description": "Packed Separator — warm, token-driven UI for React Native.",
+      "dependencies": [
+        "@rn-primitives/separator"
+      ],
+      "registryDependencies": [
+        "@packed-native/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/separator.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/separator.tsx"
+        }
+      ]
+    },
+    {
       "name": "text",
       "type": "registry:ui",
       "title": "Text",
