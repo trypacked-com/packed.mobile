@@ -97,6 +97,9 @@ module.exports = {
         'card-hover': '0px 6px 16px rgba(56, 50, 43, 0.12)',
         cta: '0px 8px 22px rgba(237, 84, 24, 0.28)',
       },
+      transitionTimingFunction: {
+        soft: 'cubic-bezier(0.34, 1.3, 0.64, 1)',
+      },
       keyframes: {
         'accordion-down': {
           from: { height: '0' },
