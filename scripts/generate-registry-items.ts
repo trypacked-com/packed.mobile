@@ -16,6 +16,7 @@ const PUBLISHED_UI: string[] = [
   'input',
   'label',
   'progress',
+  'radio-group',
   'separator',
   'skeleton',
   'switch',
@@ -30,7 +31,11 @@ const NPM_DEPS: Record<string, string[]> = {
   '@rn-primitives/avatar': ['@rn-primitives/avatar'],
   '@rn-primitives/checkbox': ['@rn-primitives/checkbox'],
   '@rn-primitives/label': ['@rn-primitives/label'],
+<<<<<<< HEAD
   '@rn-primitives/progress': ['@rn-primitives/progress'],
+=======
+  '@rn-primitives/radio-group': ['@rn-primitives/radio-group'],
+>>>>>>> feat/add-packed-radio-group
   '@rn-primitives/separator': ['@rn-primitives/separator'],
   '@rn-primitives/slot': ['@rn-primitives/slot'],
   '@rn-primitives/portal': ['@rn-primitives/portal'],
