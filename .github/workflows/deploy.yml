@@ -22,12 +22,15 @@ jobs:
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
-      - name: Build registry
-        run: bun run build:registry
+      - name: Install site dependencies
+        run: bun install --frozen-lockfile
+        working-directory: site
+      - name: Build docs site + registry
+        run: bun run build:site
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: public
+          path: site/out
 
   deploy:
     needs: build

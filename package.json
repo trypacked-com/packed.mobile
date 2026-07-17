@@ -6,9 +6,12 @@
     "dev": "expo start -c",
     "android": "expo start -c --android",
     "ios": "expo start -c --ios",
+    "dev:site": "bun run --cwd site dev",
     "registry:generate": "bun run scripts/generate-registry-items.ts",
     "build:registry": "bun run scripts/generate-registry-items.ts && bun run scripts/merge-registry-items.ts && bun run scripts/build-registry.ts",
-    "clean": "rm -rf .expo node_modules"
+    "sync:site-registry": "bun run scripts/sync-site-registry.ts",
+    "build:site": "bun run build:registry && bun run sync:site-registry && bun run --cwd site build",
+    "clean": "rm -rf .expo node_modules site/node_modules site/.next site/out"
   },
   "dependencies": {
     "@expo-google-fonts/dm-mono": "^0.4.2",
