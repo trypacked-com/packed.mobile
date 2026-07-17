@@ -15,6 +15,7 @@
     "@expo-google-fonts/figtree": "^0.4.1",
     "@expo-google-fonts/lora": "^0.4.2",
     "@rn-primitives/avatar": "^1.5.2",
+    "@rn-primitives/checkbox": "^1.5.2",
     "@rn-primitives/label": "^1.5.2",
     "@rn-primitives/portal": "~1.4.0",
     "@rn-primitives/separator": "^1.5.2",
