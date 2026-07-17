@@ -141,7 +141,6 @@
       ]
     },
     {
-<<<<<<< HEAD
       "name": "progress",
       "type": "registry:ui",
       "title": "Progress",
@@ -149,29 +148,34 @@
       "dependencies": [
         "@rn-primitives/progress",
         "react-native-reanimated"
-=======
-      "name": "radio-group",
-      "type": "registry:ui",
-      "title": "Radio Group",
-      "description": "Packed Radio Group — warm, token-driven UI for React Native.",
-      "dependencies": [
-        "@rn-primitives/radio-group"
->>>>>>> feat/add-packed-radio-group
       ],
       "registryDependencies": [
         "@packed-native/utils"
       ],
       "files": [
         {
-<<<<<<< HEAD
           "path": "components/ui/progress.tsx",
           "type": "registry:ui",
           "target": "components/ui/progress.tsx"
-=======
+        }
+      ]
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:ui",
+      "title": "Radio Group",
+      "description": "Packed Radio Group — warm, token-driven UI for React Native.",
+      "dependencies": [
+        "@rn-primitives/radio-group"
+      ],
+      "registryDependencies": [
+        "@packed-native/utils"
+      ],
+      "files": [
+        {
           "path": "components/ui/radio-group.tsx",
           "type": "registry:ui",
           "target": "components/ui/radio-group.tsx"
->>>>>>> feat/add-packed-radio-group
         }
       ]
     },
