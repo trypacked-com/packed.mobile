@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "skeleton",
+  "type": "registry:ui",
+  "title": "Skeleton",
+  "description": "Packed Skeleton — warm, token-driven UI for React Native.",
+  "dependencies": [],
+  "registryDependencies": [
+    "@packed-native/utils"
+  ],
+  "files": [
+    {
+      "path": "components/ui/skeleton.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/skeleton.tsx",
+      "content": "import { cn } from '@/lib/utils';\nimport { View } from 'react-native';\n\nfunction Skeleton({\n  className,\n  ...props\n}: React.ComponentProps<typeof View> & React.RefAttributes<View>) {\n  return (\n    <View className={cn('bg-surface-sunken animate-pulse rounded-md', className)} {...props} />\n  );\n}\n\nexport { Skeleton };\n"
+    }
+  ]
+}
