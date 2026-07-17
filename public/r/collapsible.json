@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "collapsible",
+  "type": "registry:ui",
+  "title": "Collapsible",
+  "description": "Packed Collapsible — warm, token-driven UI for React Native.",
+  "dependencies": [
+    "@rn-primitives/collapsible"
+  ],
+  "registryDependencies": [
+    "@packed-native/utils"
+  ],
+  "files": [
+    {
+      "path": "components/ui/collapsible.tsx",
+      "type": "registry:ui",
+      "target": "components/ui/collapsible.tsx",
+      "content": "import { cn } from '@/lib/utils';\nimport * as CollapsiblePrimitive from '@rn-primitives/collapsible';\nimport { Platform } from 'react-native';\n\nfunction Collapsible({\n  className,\n  ...props\n}: React.ComponentProps<typeof CollapsiblePrimitive.Root>) {\n  return (\n    <CollapsiblePrimitive.Root className={cn('flex flex-col gap-2', className)} {...props} />\n  );\n}\n\nfunction CollapsibleTrigger({\n  className,\n  ...props\n}: React.ComponentProps<typeof CollapsiblePrimitive.Trigger>) {\n  return (\n    <CollapsiblePrimitive.Trigger\n      className={cn(\n        'group flex flex-row items-center gap-2 active:opacity-70',\n        Platform.select({\n          web: 'outline-none focus-visible:ring-ring/40 focus-visible:ring-[3px]',\n        }),\n        props.disabled && 'opacity-50',\n        className\n      )}\n      {...props}\n    />\n  );\n}\n\nfunction CollapsibleContent({\n  className,\n  ...props\n}: React.ComponentProps<typeof CollapsiblePrimitive.Content>) {\n  return <CollapsiblePrimitive.Content className={cn('gap-2', className)} {...props} />;\n}\n\nexport { Collapsible, CollapsibleTrigger, CollapsibleContent };\n"
+    }
+  ]
+}
