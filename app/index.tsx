@@ -137,7 +137,7 @@ function Snippet({ children }: { children: string }) {
 function Wordmark() {
   return (
     <Text className="text-strong font-serif text-lg tracking-tight">
-      Packed<Text className="text-brand font-serif text-lg">.ui</Text>
+      Packed<Text className="text-brand font-serif text-lg">.mobile</Text>
     </Text>
   );
 }
