@@ -1,39 +1,95 @@
-<h1>
-  <img src="public/packed-mark.svg" alt="Packed" width="40" height="40" valign="middle" />
-  packed.mobile
-</h1>
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="public/packed-mark-white.svg">
+    <img src="public/packed-mark.svg" alt="Packed" height="56">
+  </picture>
+</p>
 
-The Packed design system as a React Native
-[shadcn](https://ui.shadcn.com)-compatible registry — warm, sunset-led NativeWind
-components (cream + orange, Lora / Figtree / DM Mono). Docs and previews:
-**[mobile.trypacked.dev](https://mobile.trypacked.dev/)**.
+<h1 align="center">packed.mobile</h1>
 
-## Use a component
+<p align="center">
+  React Native component registry.<br>
+  Warm sand, sunset orange, soft shadows — NativeWind.
+</p>
+
+<p align="center">
+  <a href="https://mobile.trypacked.dev/">Docs</a>
+  ·
+  <a href="https://mobile.trypacked.dev/registry.json">registry.json</a>
+  ·
+  <a href="https://github.com/trypacked-com/skills">Design system (skills)</a>
+</p>
+
+---
+
+## What this is
+
+We ship UI as static JSON for React Native. Install components with the
+[React Native Reusables](https://www.reactnativereusables.com/) CLI — same
+registry idea as shadcn / packed.ui, NativeWind defaults.
+
+29 registry items. Lora headlines, Figtree UI, DM Mono for codes and times.
+Warm-tinted elevation, rounded corners, no cool grey. Tokens live in
+`global.css` + `tailwind.config.js`; maintainer rules in the
+**packed-mobile-maintainer** skill.
+
+## Install
+
+Add the registry to `components.json`:
+
+```json
+"registries": {
+  "@packed-native": "https://mobile.trypacked.dev/r/{name}.json"
+}
+```
+
+Pull **@packed-native/theme first**, then components. Use the
+`@packed-native/<name>` namespace on the CLI — registry manifests declare
+namespaced `registryDependencies` (e.g. `@packed-native/button`), so the
+resolver stays on `mobile.trypacked.dev`.
 
 ```bash
+npx @react-native-reusables/cli@latest add @packed-native/theme
 npx @react-native-reusables/cli@latest add @packed-native/button
 ```
 
-Point `@packed-native` at `https://mobile.trypacked.dev/r/{name}.json` in
-`components.json`. Components land in `components/ui/` and resolve their
-dependencies (including the `cn()` helper) automatically. **29 components** are
-available — browse the full list at
-[mobile.trypacked.dev](https://mobile.trypacked.dev/) or in `registry.json`
-(`accordion`, `alert`, `button`, `card`, `dialog`, `input`, `select`, `tabs`,
-…).
+Components land in `components/ui/` and resolve their dependencies (including
+`cn()`) automatically.
 
-## Add a new component
+Full catalog: [mobile.trypacked.dev](https://mobile.trypacked.dev/)
 
-Fetch the RNR base with
-`npx @react-native-reusables/cli@latest add <name> -y -o --styling-library nativewind`,
-restyle it in `components/ui/` with Packed token utilities (`bg-brand`,
-`text-on-brand`, `border-border-subtle`, … — semantic tokens only), add the name
-to `PUBLISHED_UI` in `scripts/generate-registry-items.ts`, then run
-`bun run build:registry` to emit `public/r/<name>.json`. Smoke-check with
-`bun run ios` / `bun run android`. Push to `main` and GitHub Actions publishes
-the docs + registry.
+## Development
 
-## Scripts
+```bash
+bun install
+bun run --cwd site install
+bun run dev          # Expo app
+bun run ios          # iOS
+bun run android      # Android
+bun run dev:site     # docs site (RNW previews)
+bun run build:registry
+bun run build:site   # registry + docs static export
+```
 
-`bun run dev` · `bun run ios` · `bun run android` · `bun run build:registry` ·
-`bun run build:site` · `bun run dev:site`
+## Add a component
+
+1. Fetch the RNR NativeWind base:
+   `npx @react-native-reusables/cli@latest add <name> -y -o --styling-library nativewind`
+2. Restyle in `components/ui/` with Packed token utilities (`bg-brand`,
+   `text-on-brand`, `border-border-subtle`, … — semantic tokens only)
+3. Add the name to `PUBLISHED_UI` in `scripts/generate-registry-items.ts`
+4. `bun run build:registry`
+5. Preview in `components/docs/previews/` + Expo smoke-check
+6. Push to `main` — GitHub Actions publishes docs + registry
+
+## Agent skills
+
+All skills: [packed.skills](https://github.com/trypacked-com/skills)
+
+```bash
+# this repo
+bunx skills add trypacked-com/skills --skill packed-mobile-maintainer --skill packed-design -a cursor -a claude-code -y
+
+# consumer app
+bunx skills add trypacked-com/skills --skill packed-mobile --skill packed-design -a cursor -a claude-code -y
+```
