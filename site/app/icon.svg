@@ -1,0 +1,13 @@
+<svg width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>Packed</title>
+  <defs>
+    <linearGradient id="pkFav" x1="0" y1="0" x2="0" y2="64" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF8147"></stop>
+      <stop offset="1" stop-color="#ED5418"></stop>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#pkFav)"></rect>
+  <path d="M23 21 V17 A6.5 6.5 0 0 1 29.5 10.5 H34.5 A6.5 6.5 0 0 1 41 17 V21" stroke="#FFFFFF" stroke-width="4.2" stroke-linecap="round" fill="none"></path>
+  <rect x="12" y="21" width="40" height="33" rx="9" fill="#FFFFFF"></rect>
+  <rect x="24.8" y="30.6" width="14.4" height="6.4" rx="2.6" fill="#FF6B2C"></rect>
+</svg>
