@@ -117,7 +117,8 @@
       "description": "Packed Badge — warm, token-driven UI for React Native.",
       "dependencies": [
         "@rn-primitives/slot",
-        "class-variance-authority"
+        "class-variance-authority",
+        "react-native-reanimated"
       ],
       "registryDependencies": [
         "@packed-native/text",
