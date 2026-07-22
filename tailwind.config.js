@@ -71,6 +71,15 @@ module.exports = {
           'info-fg': 'hsl(var(--status-info-fg))',
           'info-bg': 'hsl(var(--status-info-bg))',
         },
+        green: {
+          500: 'hsl(var(--green-500))',
+        },
+        amber: {
+          500: 'hsl(var(--amber-500))',
+        },
+        red: {
+          500: 'hsl(var(--red-500))',
+        },
       },
       fontFamily: {
         sans: ['Figtree_400Regular'],
