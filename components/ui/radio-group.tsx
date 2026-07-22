@@ -16,7 +16,7 @@ function RadioGroupItem({
   return (
     <RadioGroupPrimitive.Item
       className={cn(
-        'border-border bg-background aspect-square size-4 shrink-0 items-center justify-center rounded-full border shadow-card',
+        'border-border-strong bg-card aspect-square size-5 shrink-0 items-center justify-center rounded-full border-[1.5px]',
         Platform.select({
           web: 'focus-visible:border-border-brand focus-visible:ring-ring/40 aria-invalid:ring-destructive/20 aria-invalid:border-destructive outline-none transition-all focus-visible:ring-[3px] disabled:cursor-not-allowed data-[state=checked]:border-brand',
           native: 'aria-checked:border-brand',

@@ -8,7 +8,7 @@ import { Platform } from 'react-native';
 
 const toggleVariants = cva(
   cn(
-    'group shrink-0 flex-row items-center justify-center gap-2 rounded-md',
+    'group shrink-0 flex-row items-center justify-center gap-1 rounded-md',
     Platform.select({
       web: 'focus-visible:border-border-brand focus-visible:ring-ring/40 aria-invalid:ring-destructive/20 aria-invalid:border-destructive inline-flex cursor-default whitespace-nowrap outline-none transition-all focus-visible:ring-[3px] disabled:pointer-events-none [&_svg]:pointer-events-none',
     })
@@ -21,14 +21,14 @@ const toggleVariants = cva(
           Platform.select({ web: 'hover:bg-brand-subtle' })
         ),
         outline: cn(
-          'border-border bg-background active:bg-brand-subtle active:border-border-brand border shadow-card',
-          Platform.select({ web: 'hover:bg-brand-subtle hover:border-border-brand' })
+          'border-border-subtle bg-transparent active:bg-brand-subtle border shadow-xs',
+          Platform.select({ web: 'hover:bg-brand-subtle' })
         ),
       },
       size: {
-        default: 'h-10 min-w-10 px-3',
-        sm: 'h-8 min-w-8 gap-1.5 px-2.5',
-        lg: 'h-12 min-w-12 gap-2.5 px-4',
+        default: 'h-9 min-w-9 px-2',
+        sm: 'h-8 min-w-8 gap-1.5 px-1.5',
+        lg: 'h-10 min-w-10 px-2.5',
       },
     },
     defaultVariants: {
@@ -40,7 +40,7 @@ const toggleVariants = cva(
 
 const toggleTextVariants = cva(
   cn(
-    'font-sans-semibold text-sm',
+    'font-sans-medium text-sm',
     Platform.select({ web: 'pointer-events-none transition-colors' })
   ),
   {
@@ -51,8 +51,8 @@ const toggleTextVariants = cva(
       },
       size: {
         default: 'text-sm',
-        sm: 'text-xs',
-        lg: 'text-base',
+        sm: 'text-[0.8rem]',
+        lg: 'text-sm',
       },
     },
     defaultVariants: {
@@ -71,14 +71,14 @@ function Toggle({ className, variant, size, ...props }: ToggleProps) {
       value={cn(
         toggleTextVariants({ variant, size }),
         props.pressed
-          ? 'text-on-brand'
-          : Platform.select({ web: 'group-hover:text-brand' })
+          ? 'text-link'
+          : Platform.select({ web: 'group-hover:text-strong' })
       )}>
       <TogglePrimitive.Root
         className={cn(
           toggleVariants({ variant, size }),
           props.disabled && 'opacity-50',
-          props.pressed && 'border-transparent bg-brand shadow-cta active:bg-brand-hover',
+          props.pressed && 'bg-brand-subtle',
           className
         )}
         {...props}

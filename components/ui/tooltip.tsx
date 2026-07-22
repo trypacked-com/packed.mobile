@@ -40,11 +40,11 @@ function TooltipContent({
             }
             exiting={FadeOut.reduceMotion(ReduceMotion.System)}
             as="Pressable">
-            <TextClassContext.Provider value="text-xs text-strong font-sans">
+            <TextClassContext.Provider value="text-xs text-on-inverse font-sans">
               <TooltipPrimitive.Content
                 sideOffset={sideOffset}
                 className={cn(
-                  'border-border-subtle bg-card z-50 rounded-xl border px-3 py-2 shadow-card',
+                  'bg-surface-inverse z-50 rounded-sm px-3 py-1.5 shadow-md',
                   Platform.select({
                     web: cn(
                       'animate-in fade-in-0 zoom-in-95 origin-(--radix-tooltip-content-transform-origin) w-fit text-balance',

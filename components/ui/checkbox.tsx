@@ -20,22 +20,22 @@ function Checkbox({
   return (
     <CheckboxPrimitive.Root
       className={cn(
-        'border-border bg-background size-4 shrink-0 rounded-md border shadow-card',
+        'border-border-strong bg-card size-5 shrink-0 rounded-xs border-[1.5px]',
         Platform.select({
           web: 'focus-visible:border-border-brand focus-visible:ring-ring/40 aria-invalid:ring-destructive/20 aria-invalid:border-destructive peer cursor-default outline-none transition-shadow focus-visible:ring-[3px] disabled:cursor-not-allowed',
           native: 'overflow-hidden',
         }),
-        props.checked && cn('border-brand', checkedClassName),
+        props.checked && cn('border-brand bg-brand', checkedClassName),
         props.disabled && 'opacity-50',
         className
       )}
       hitSlop={DEFAULT_HIT_SLOP}
       {...props}>
       <CheckboxPrimitive.Indicator
-        className={cn('bg-brand h-full w-full items-center justify-center', indicatorClassName)}>
+        className={cn('h-full w-full items-center justify-center', indicatorClassName)}>
         <Icon
           as={Check}
-          size={12}
+          size={14}
           strokeWidth={Platform.OS === 'web' ? 2.5 : 3.5}
           className={cn('text-on-brand', iconClassName)}
         />

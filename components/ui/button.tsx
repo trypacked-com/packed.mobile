@@ -14,19 +14,19 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: cn(
-          'bg-brand active:bg-brand-hover shadow-cta',
+          'bg-brand active:bg-brand-hover shadow-brand',
           Platform.select({ web: 'hover:bg-brand-hover' })
         ),
         destructive: cn(
-          'bg-destructive active:bg-destructive/90 shadow-card',
+          'bg-destructive active:bg-destructive/90 shadow-xs',
           Platform.select({ web: 'hover:bg-destructive/90 focus-visible:ring-destructive/40' })
         ),
         outline: cn(
-          'border-border bg-background active:bg-brand-subtle active:border-border-brand border',
+          'border-border bg-transparent active:bg-brand-subtle active:border-border-brand border shadow-xs',
           Platform.select({ web: 'hover:bg-brand-subtle hover:border-border-brand' })
         ),
         secondary: cn(
-          'border-border bg-card active:bg-surface-sunken active:border-border-strong border shadow-card',
+          'border-border bg-card active:bg-surface-sunken active:border-border-strong border shadow-xs',
           Platform.select({ web: 'hover:bg-surface-sunken hover:border-border-strong' })
         ),
         ghost: cn(

@@ -6,7 +6,7 @@ import { Platform, View } from 'react-native';
 
 const badgeVariants = cva(
   cn(
-    'group shrink-0 flex-row items-center justify-center gap-1 overflow-hidden rounded-full border px-2.5 py-0.5',
+    'group shrink-0 flex-row items-center justify-center gap-1.5 overflow-hidden rounded-pill border border-transparent px-2.5 py-0.5',
     Platform.select({
       web: 'focus-visible:border-border-brand focus-visible:ring-ring/40 aria-invalid:ring-destructive/20 aria-invalid:border-destructive w-fit whitespace-nowrap outline-none transition-all focus-visible:ring-[3px] [&>svg]:pointer-events-none [&>svg]:size-3',
     })
@@ -14,10 +14,10 @@ const badgeVariants = cva(
   {
     variants: {
       variant: {
-        default: 'border-transparent bg-brand shadow-cta',
-        secondary: 'border-border bg-card shadow-card',
-        destructive: 'border-transparent bg-destructive shadow-card',
-        outline: 'border-border bg-background',
+        default: 'bg-brand',
+        secondary: 'bg-secondary',
+        destructive: 'bg-destructive',
+        outline: 'border-border',
       },
     },
     defaultVariants: {
@@ -32,7 +32,7 @@ const badgeTextVariants = cva(
     variants: {
       variant: {
         default: 'text-on-brand',
-        secondary: 'text-strong',
+        secondary: 'text-secondary-foreground',
         destructive: 'text-white',
         outline: 'text-foreground',
       },

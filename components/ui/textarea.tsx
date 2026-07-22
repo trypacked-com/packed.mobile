@@ -13,7 +13,7 @@ function Textarea({
   return (
     <TextInput
       className={cn(
-        'border-border bg-background text-foreground font-sans flex min-h-16 w-full flex-row rounded-md border px-3 py-2 text-base leading-5',
+        'border-border bg-card text-strong font-sans flex min-h-16 w-full flex-row rounded-md border-[1.5px] px-3 py-2 text-base leading-5 shadow-xs',
         props.editable === false &&
           cn(
             'opacity-50',
@@ -21,15 +21,15 @@ function Textarea({
           ),
         Platform.select({
           web: cn(
-            'placeholder:text-muted-foreground selection:bg-brand selection:text-on-brand field-sizing-content resize-y outline-none transition-[color,box-shadow]',
+            'placeholder:text-subtle selection:bg-brand selection:text-on-brand field-sizing-content resize-y outline-none transition-[color,box-shadow]',
             'focus-visible:border-border-brand focus-visible:ring-ring/40 focus-visible:ring-[3px]',
             'aria-invalid:ring-destructive/20 aria-invalid:border-destructive'
           ),
-          native: 'placeholder:text-muted-foreground',
+          native: 'placeholder:text-subtle',
         }),
         className
       )}
-      placeholderClassName={cn('text-muted-foreground', placeholderClassName)}
+      placeholderClassName={cn('text-subtle', placeholderClassName)}
       multiline={multiline}
       numberOfLines={numberOfLines}
       textAlignVertical="top"
