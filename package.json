@@ -10,7 +10,7 @@
     "registry:generate": "bun run scripts/generate-registry-items.ts",
     "build:registry": "bun run scripts/generate-registry-items.ts && bun run scripts/merge-registry-items.ts && bun run scripts/build-registry.ts",
     "sync:site-registry": "bun run scripts/sync-site-registry.ts",
-    "build:rnw-css": "tailwindcss -c ./site/tailwind.rnw.config.js -i ./site/rnw.input.css -o ./site/app/rnw.generated.css --minify",
+    "build:rnw-css": "bun run scripts/build-rnw-css.ts",
     "build:site": "bun run build:registry && bun run sync:site-registry && bun run build:rnw-css && bun run --cwd site build",
     "clean": "rm -rf .expo node_modules site/node_modules site/.next site/out"
   },
