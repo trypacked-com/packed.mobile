@@ -8,7 +8,6 @@ module.exports = {
   content: [
     path.join(__dirname, "../components/ui/**/*.{ts,tsx}"),
     path.join(__dirname, "../components/docs/previews/**/*.{ts,tsx}"),
-    path.join(__dirname, "./app/(docs)/demos/**/*.{ts,tsx}"),
   ],
   important: ".rn-preview",
   theme: {
