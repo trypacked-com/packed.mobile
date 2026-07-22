@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Icon } from '@/components/ui/icon';
+import { Logo } from '@/components/ui/logo';
 import { Text } from '@/components/ui/text';
 import { Link } from 'expo-router';
 import { MoonStarIcon, SunIcon } from 'lucide-react-native';
@@ -9,9 +10,12 @@ import { Pressable, View } from 'react-native';
 
 export function Wordmark() {
   return (
-    <Text className="text-strong font-serif text-lg tracking-tight">
-      Packed<Text className="text-brand font-serif text-lg">.mobile</Text>
-    </Text>
+    <View className="flex-row items-center gap-2">
+      <Logo size="sm" />
+      <Text className="text-strong font-serif text-lg tracking-tight">
+        Packed<Text className="text-brand font-serif text-lg">.mobile</Text>
+      </Text>
+    </View>
   );
 }
 

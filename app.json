@@ -18,7 +18,7 @@
       "package": "com.trypacked.mobile",
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#ED5418"
       }
     },
     "plugins": [
@@ -28,7 +28,7 @@
         {
           "image": "./assets/images/splash.png",
           "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ED5418"
         }
       ],
       "expo-status-bar",
