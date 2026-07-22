@@ -10,6 +10,10 @@ module.exports = {
     path.join(__dirname, "../components/docs/previews/**/*.{ts,tsx}"),
   ],
   important: ".rn-preview",
+  corePlugins: {
+    ...rootConfig.corePlugins,
+    preflight: false,
+  },
   theme: {
     ...rootConfig.theme,
     extend: {
