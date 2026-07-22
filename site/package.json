@@ -4,8 +4,6 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build:rnw-css": "bun ../node_modules/tailwindcss/lib/cli.js -c ./tailwind.rnw.config.js -i ../global.css -o ./app/rnw.generated.css --minify",
-    "prebuild": "bun run build:rnw-css",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
