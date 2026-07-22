@@ -5,6 +5,8 @@ import { notFound } from "next/navigation";
 
 import registry from "../../../../../registry.json";
 
+import { ComponentPreviewClient } from "../component-preview-client";
+
 type RegistryFile = { path: string; type: string; target?: string };
 type RegistryItem = {
   name: string;
@@ -67,6 +69,11 @@ export default async function ComponentPage({
           </p>
         ) : null}
       </div>
+
+      <section className="space-y-3">
+        <h2 className="pk-eyebrow">Preview</h2>
+        <ComponentPreviewClient slug={slug} />
+      </section>
 
       <section className="space-y-3">
         <h2 className="pk-eyebrow">Install</h2>

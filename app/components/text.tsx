@@ -5,6 +5,7 @@ import {
   ThemeToggle,
   Wordmark,
 } from '@/components/docs/chrome';
+import { TextPreview } from '@/components/docs/previews/text';
 import { Text } from '@/components/ui/text';
 import { Stack } from 'expo-router';
 import { ScrollView, View } from 'react-native';
@@ -32,19 +33,7 @@ export default function TextScreen() {
             Preview
           </Text>
           <PreviewFrame>
-            <View className="w-full gap-3">
-              <Text variant="h1">Display heading</Text>
-              <Text variant="h2">Section heading</Text>
-              <Text variant="h3">Subsection</Text>
-              <Text variant="h4">Card title</Text>
-              <Text variant="lead">Lead copy for trip summaries and empty states.</Text>
-              <Text variant="p">
-                Body text for itineraries, packing notes, and calm product copy.
-              </Text>
-              <Text variant="muted">Muted helper text</Text>
-              <Text variant="small">Small label</Text>
-              <Text variant="code">LHR → JFK</Text>
-            </View>
+            <TextPreview />
           </PreviewFrame>
         </View>
 

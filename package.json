@@ -6,7 +6,7 @@
     "dev": "expo start -c",
     "android": "expo start -c --android",
     "ios": "expo start -c --ios",
-    "dev:site": "bun run --cwd site dev",
+    "dev:site": "bun run --cwd site build:rnw-css && bun run --cwd site dev",
     "registry:generate": "bun run scripts/generate-registry-items.ts",
     "build:registry": "bun run scripts/generate-registry-items.ts && bun run scripts/merge-registry-items.ts && bun run scripts/build-registry.ts",
     "sync:site-registry": "bun run scripts/sync-site-registry.ts",

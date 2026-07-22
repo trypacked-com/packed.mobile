@@ -8,8 +8,8 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
+} from "@site/components/ui/card";
+import { Input } from "@site/components/ui/input";
 
 type ComponentItem = {
   name: string;

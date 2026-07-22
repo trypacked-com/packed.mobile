@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "@site/lib/utils";
 
 type LogoProps = React.ComponentProps<"svg"> & {
   /** `auto` follows light/dark theme; `brand` and `inverse` are fixed. */

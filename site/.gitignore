@@ -17,6 +17,9 @@
 /.next/
 /out/
 
+# generated NativeWind CSS for RN previews
+/app/rnw.generated.css
+
 # synced from root registry build
 /public/r/
 /public/registry.json

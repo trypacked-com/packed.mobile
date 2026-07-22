@@ -5,7 +5,7 @@ import {
   ThemeToggle,
   Wordmark,
 } from '@/components/docs/chrome';
-import { Badge } from '@/components/ui/badge';
+import { BadgePreview } from '@/components/docs/previews/badge';
 import { Text } from '@/components/ui/text';
 import { Stack } from 'expo-router';
 import { ScrollView, View } from 'react-native';
@@ -33,33 +33,7 @@ export default function BadgeScreen() {
             Preview
           </Text>
           <PreviewFrame>
-            <View className="items-center gap-4">
-              <View className="flex-row flex-wrap items-center justify-center gap-2">
-                <Badge>
-                  <Text>Confirmed</Text>
-                </Badge>
-                <Badge variant="secondary">
-                  <Text>Draft trip</Text>
-                </Badge>
-                <Badge variant="outline">
-                  <Text>Layover</Text>
-                </Badge>
-                <Badge variant="destructive">
-                  <Text>Cancelled</Text>
-                </Badge>
-              </View>
-              <View className="flex-row flex-wrap items-center justify-center gap-2">
-                <Badge>
-                  <Text>On time</Text>
-                </Badge>
-                <Badge variant="secondary">
-                  <Text>12 items packed</Text>
-                </Badge>
-                <Badge variant="outline">
-                  <Text>Gate B24</Text>
-                </Badge>
-              </View>
-            </View>
+            <BadgePreview />
           </PreviewFrame>
         </View>
 

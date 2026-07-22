@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useLayoutEffect, useState } from "react";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@site/lib/utils";
 
 export const THEME_STORAGE_KEY = "packed-theme";
 
