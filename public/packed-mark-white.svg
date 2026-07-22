@@ -1,0 +1,6 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Packed">
+  <path d="M17.5 15 V12 A5 5 0 0 1 22.5 7 H25.5 A5 5 0 0 1 30.5 12 V15" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" fill="none"></path>
+  <rect x="7" y="15" width="34" height="26" rx="6.5" fill="#FFFFFF"></rect>
+  <rect x="7" y="22.6" width="34" height="3.2" fill="#FF6B2C" opacity="0.55"></rect>
+  <rect x="18.8" y="21.4" width="10.4" height="4.8" rx="2" fill="#FF6B2C"></rect>
+</svg>
