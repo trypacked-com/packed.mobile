@@ -37,10 +37,10 @@ function PopoverContent({
                 align={align}
                 sideOffset={sideOffset}
                 className={cn(
-                  'border-border-subtle bg-card z-50 w-72 rounded-2xl border p-4 shadow-card',
+                  'border-border-subtle bg-card z-50 w-72 flex-col gap-2.5 rounded-lg border p-4 shadow-lg',
                   Platform.select({
                     web: cn(
-                      'animate-in fade-in-0 zoom-in-95 origin-(--radix-popover-content-transform-origin) cursor-auto',
+                      'animate-in fade-in-0 zoom-in-95 origin-(--radix-popover-content-transform-origin) cursor-auto text-sm',
                       props.side === 'bottom' && 'slide-in-from-top-2',
                       props.side === 'top' && 'slide-in-from-bottom-2'
                     ),

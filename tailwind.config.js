@@ -14,6 +14,7 @@ module.exports = {
         'border-brand': 'hsl(var(--border-brand))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
+        app: 'hsl(var(--background))',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         strong: 'hsl(var(--strong))',
@@ -21,6 +22,8 @@ module.exports = {
         subtle: 'hsl(var(--subtle))',
         link: 'hsl(var(--link))',
         'surface-sunken': 'hsl(var(--surface-sunken))',
+        'surface-inverse': 'hsl(var(--surface-inverse))',
+        'on-inverse': 'hsl(var(--on-inverse))',
         primary: {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',
@@ -93,12 +96,25 @@ module.exports = {
         hairline: hairlineWidth(),
       },
       boxShadow: {
-        card: '0px 2px 8px rgba(56, 50, 43, 0.10)',
-        'card-hover': '0px 6px 16px rgba(56, 50, 43, 0.12)',
+        xs: '0px 1px 2px rgba(56, 50, 43, 0.06)',
+        sm: '0px 1px 3px rgba(56, 50, 43, 0.08)',
+        md: '0px 4px 12px rgba(56, 50, 43, 0.08)',
+        lg: '0px 12px 28px rgba(56, 50, 43, 0.10)',
+        xl: '0px 24px 56px rgba(56, 50, 43, 0.14)',
+        card: '0px 1px 3px rgba(56, 50, 43, 0.08)',
+        'card-hover': '0px 4px 12px rgba(56, 50, 43, 0.08)',
+        brand: '0px 8px 22px rgba(237, 84, 24, 0.28)',
         cta: '0px 8px 22px rgba(237, 84, 24, 0.28)',
       },
       transitionTimingFunction: {
         soft: 'cubic-bezier(0.34, 1.3, 0.64, 1)',
+        out: 'cubic-bezier(0.22, 1, 0.36, 1)',
+        'in-out': 'cubic-bezier(0.65, 0, 0.35, 1)',
+      },
+      transitionDuration: {
+        fast: '120ms',
+        base: '200ms',
+        slow: '320ms',
       },
       keyframes: {
         'accordion-down': {

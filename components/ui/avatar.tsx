@@ -9,7 +9,7 @@ function Avatar({
   return (
     <AvatarPrimitive.Root
       className={cn(
-        'relative flex size-8 shrink-0 overflow-hidden rounded-full border border-border-subtle bg-card',
+        'relative flex size-8 shrink-0 overflow-hidden rounded-full ring-1 ring-border-subtle',
         className
       )}
       {...props}
@@ -29,10 +29,10 @@ function AvatarFallback({
   ...props
 }: React.ComponentProps<typeof AvatarPrimitive.Fallback>) {
   return (
-    <TextClassContext.Provider value="text-strong font-sans-medium text-xs">
+    <TextClassContext.Provider value="text-strong font-sans-semibold text-sm">
       <AvatarPrimitive.Fallback
         className={cn(
-          'bg-surface-sunken flex size-full flex-row items-center justify-center rounded-full',
+          'bg-brand-subtle flex size-full flex-row items-center justify-center rounded-full',
           className
         )}
         {...props}

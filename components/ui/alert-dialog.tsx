@@ -29,7 +29,7 @@ function AlertDialogOverlay({
         className={cn(
           'absolute bottom-0 left-0 right-0 top-0 z-50 flex items-center justify-center bg-black/40 p-2',
           Platform.select({
-            web: 'animate-in fade-in-0 fixed',
+            web: 'animate-in fade-in-0 fixed backdrop-blur-sm',
           }),
           className
         )}
@@ -58,7 +58,7 @@ function AlertDialogContent({
       <AlertDialogOverlay>
         <AlertDialogPrimitive.Content
           className={cn(
-            'border-border-subtle bg-card z-50 flex w-full max-w-[calc(100%-2rem)] flex-col gap-4 rounded-2xl border p-6 shadow-card sm:max-w-lg',
+            'border-border-subtle bg-card z-50 flex w-full max-w-[calc(100%-2rem)] flex-col gap-4 rounded-xl border p-6 shadow-xl sm:max-w-lg',
             Platform.select({
               web: 'animate-in fade-in-0 zoom-in-95 duration-200',
             }),
@@ -74,7 +74,7 @@ function AlertDialogContent({
 function AlertDialogHeader({ className, ...props }: ViewProps) {
   return (
     <TextClassContext.Provider value="text-strong font-sans text-center sm:text-left">
-      <View className={cn('flex flex-col gap-2', className)} {...props} />
+      <View className={cn('flex flex-col gap-1.5', className)} {...props} />
     </TextClassContext.Provider>
   );
 }
@@ -94,7 +94,7 @@ function AlertDialogTitle({
 }: React.ComponentProps<typeof AlertDialogPrimitive.Title>) {
   return (
     <AlertDialogPrimitive.Title
-      className={cn('text-strong font-sans-semibold text-lg leading-none', className)}
+      className={cn('text-strong font-serif text-lg leading-none', className)}
       {...props}
     />
   );
@@ -106,7 +106,7 @@ function AlertDialogDescription({
 }: React.ComponentProps<typeof AlertDialogPrimitive.Description>) {
   return (
     <AlertDialogPrimitive.Description
-      className={cn('text-muted-foreground text-sm leading-relaxed', className)}
+      className={cn('text-muted-text text-sm leading-relaxed', className)}
       {...props}
     />
   );

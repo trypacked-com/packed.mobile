@@ -9,7 +9,7 @@ function Switch({
   return (
     <SwitchPrimitives.Root
       className={cn(
-        'flex h-[1.15rem] w-8 shrink-0 flex-row items-center rounded-full border border-transparent shadow-card',
+        'flex h-[1.15rem] w-8 shrink-0 flex-row items-center rounded-pill border border-transparent shadow-xs',
         Platform.select({
           web: 'focus-visible:border-border-brand focus-visible:ring-ring/40 peer inline-flex outline-none transition-all focus-visible:ring-[3px] disabled:cursor-not-allowed',
         }),
@@ -20,7 +20,7 @@ function Switch({
       {...props}>
       <SwitchPrimitives.Thumb
         className={cn(
-          'bg-white size-4 rounded-full shadow-sm transition-transform duration-200',
+          'bg-white size-4 rounded-pill shadow-sm transition-transform duration-200',
           Platform.select({
             web: 'pointer-events-none block ring-0 ease-soft motion-reduce:transition-none',
           }),

@@ -17,7 +17,7 @@ function TabsList({
   return (
     <TabsPrimitive.List
       className={cn(
-        'bg-surface-sunken flex h-10 flex-row items-center justify-center rounded-xl p-1',
+        'bg-muted flex h-9 flex-row items-center justify-center rounded-lg p-[3px]',
         Platform.select({ web: 'inline-flex w-fit', native: 'mr-auto' }),
         className
       )}
@@ -37,19 +37,19 @@ function TabsTrigger({
     <TextClassContext.Provider
       value={cn(
         'font-sans-medium text-sm',
-        isActive ? 'text-on-brand font-sans-semibold' : 'text-muted-foreground',
+        isActive ? 'text-strong' : 'text-muted-text',
         Platform.select({
-          web: !isActive ? 'group-hover:text-brand' : undefined,
+          web: !isActive ? 'group-hover:text-strong' : undefined,
         })
       )}>
       <TabsPrimitive.Trigger
         className={cn(
-          'group flex h-full flex-row items-center justify-center gap-1.5 rounded-lg border border-transparent px-3 py-1 shadow-none',
+          'group flex h-full flex-row items-center justify-center gap-1.5 rounded-md border border-transparent px-2 py-1 shadow-none',
           Platform.select({
             web: 'focus-visible:border-border-brand focus-visible:ring-ring/40 inline-flex cursor-default whitespace-nowrap outline-none transition-all focus-visible:ring-[3px] disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0',
           }),
           props.disabled && 'opacity-50',
-          isActive && 'bg-brand shadow-cta active:bg-brand-hover',
+          isActive && 'bg-card shadow-sm',
           !isActive &&
             cn(
               'active:bg-brand-subtle',

@@ -49,7 +49,7 @@ function DropdownMenuSubTrigger({
       )}>
       <DropdownMenuPrimitive.SubTrigger
         className={cn(
-          'active:bg-brand-subtle group flex flex-row items-center rounded-xl px-2 py-2 sm:py-1.5',
+          'active:bg-brand-subtle group flex flex-row items-center rounded-sm px-2 py-1.5',
           Platform.select({
             web: 'focus:bg-brand-subtle focus:text-strong cursor-default outline-none [&_svg]:pointer-events-none',
           }),
@@ -59,7 +59,7 @@ function DropdownMenuSubTrigger({
         )}
         {...props}>
         <>{children}</>
-        <Icon as={icon} className={cn('text-muted-foreground ml-auto size-4 shrink-0', iconClassName)} />
+        <Icon as={icon} className={cn('text-muted-text ml-auto size-4 shrink-0', iconClassName)} />
       </DropdownMenuPrimitive.SubTrigger>
     </TextClassContext.Provider>
   );
@@ -75,7 +75,7 @@ function DropdownMenuSubContent({
       exiting={FadeOut.reduceMotion(ReduceMotion.System)}>
       <DropdownMenuPrimitive.SubContent
         className={cn(
-          'border-border-subtle bg-card overflow-hidden rounded-2xl border p-1 shadow-card',
+          'border-border-subtle bg-card overflow-hidden rounded-md border p-1 shadow-md',
           Platform.select({
             web: 'animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 fade-in-0 data-[state=closed]:zoom-out-95 zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 origin-(--radix-context-menu-content-transform-origin) z-50 min-w-[8rem]',
           }),
@@ -122,7 +122,7 @@ function DropdownMenuContent({
             <TextClassContext.Provider value="text-strong font-sans">
               <DropdownMenuPrimitive.Content
                 className={cn(
-                  'border-border-subtle bg-card min-w-[8rem] overflow-hidden rounded-2xl border p-1 shadow-card',
+                  'border-border-subtle bg-card min-w-[8rem] overflow-hidden rounded-md border p-1 shadow-md',
                   Platform.select({
                     web: cn(
                       'animate-in fade-in-0 zoom-in-95 max-h-(--radix-context-menu-content-available-height) origin-(--radix-context-menu-content-transform-origin) z-50 cursor-default',
@@ -160,7 +160,7 @@ function DropdownMenuItem({
       )}>
       <DropdownMenuPrimitive.Item
         className={cn(
-          'active:bg-brand-subtle group relative flex flex-row items-center gap-2 rounded-xl px-2 py-2 sm:py-1.5',
+          'active:bg-brand-subtle group relative flex flex-row items-center gap-1.5 rounded-sm px-2 py-1.5',
           Platform.select({
             web: cn(
               'focus:bg-brand-subtle focus:text-strong cursor-default outline-none data-[disabled]:pointer-events-none',
@@ -189,7 +189,7 @@ function DropdownMenuCheckboxItem({
     <TextClassContext.Provider value="text-sm text-strong font-sans select-none group-active:text-strong">
       <DropdownMenuPrimitive.CheckboxItem
         className={cn(
-          'active:bg-brand-subtle group relative flex flex-row items-center gap-2 rounded-xl py-2 pl-8 pr-2 sm:py-1.5',
+          'active:bg-brand-subtle group relative flex flex-row items-center gap-1.5 rounded-sm py-1.5 pl-8 pr-2',
           Platform.select({
             web: 'focus:bg-brand-subtle focus:text-strong cursor-default outline-none data-[disabled]:pointer-events-none',
           }),
@@ -222,7 +222,7 @@ function DropdownMenuRadioItem({
     <TextClassContext.Provider value="text-sm text-strong font-sans select-none group-active:text-strong">
       <DropdownMenuPrimitive.RadioItem
         className={cn(
-          'active:bg-brand-subtle group relative flex flex-row items-center gap-2 rounded-xl py-2 pl-8 pr-2 sm:py-1.5',
+          'active:bg-brand-subtle group relative flex flex-row items-center gap-1.5 rounded-sm py-1.5 pl-8 pr-2',
           Platform.select({
             web: 'focus:bg-brand-subtle focus:text-strong cursor-default outline-none data-[disabled]:pointer-events-none',
           }),
@@ -232,7 +232,10 @@ function DropdownMenuRadioItem({
         {...props}>
         <View className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
           <DropdownMenuPrimitive.ItemIndicator>
-            <View className="bg-brand h-2 w-2 rounded-full" />
+            <Icon
+              as={Check}
+              className={cn('text-brand size-4', Platform.select({ web: 'pointer-events-none' }))}
+            />
           </DropdownMenuPrimitive.ItemIndicator>
         </View>
         <>{children}</>
@@ -252,7 +255,7 @@ function DropdownMenuLabel({
   return (
     <DropdownMenuPrimitive.Label
       className={cn(
-        'text-muted-foreground font-sans-semibold px-2 py-2 text-xs uppercase tracking-widest sm:py-1.5',
+        'text-muted-text font-sans-medium px-1.5 py-1 text-xs',
         inset && 'pl-8',
         className
       )}
@@ -281,7 +284,7 @@ function DropdownMenuShortcut({ className, ...props }: React.ComponentProps<type
   return (
     <Text
       className={cn(
-        'text-muted-foreground font-mono ml-auto text-xs tracking-widest',
+        'text-subtle font-mono ml-auto text-xs tracking-widest',
         className
       )}
       {...props}

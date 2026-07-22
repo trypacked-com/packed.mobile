@@ -21,7 +21,7 @@ function ToggleGroup({
       className={cn(
         'flex flex-row items-center rounded-md',
         Platform.select({ web: 'w-fit' }),
-        variant === 'outline' && 'shadow-card',
+        variant === 'outline' && 'shadow-xs',
         className
       )}
       {...props}>
@@ -66,8 +66,8 @@ function ToggleGroupItem({
       value={cn(
         toggleTextVariants({ variant: resolvedVariant, size: resolvedSize }),
         selected
-          ? 'text-on-brand'
-          : Platform.select({ web: 'group-hover:text-brand' })
+          ? 'text-link'
+          : Platform.select({ web: 'group-hover:text-strong' })
       )}>
       <ToggleGroupPrimitive.Item
         className={cn(
@@ -76,7 +76,7 @@ function ToggleGroupItem({
             size: resolvedSize,
           }),
           props.disabled && 'opacity-50',
-          selected && 'border-transparent bg-brand active:bg-brand-hover',
+          selected && 'bg-brand-subtle',
           'min-w-0 shrink-0 rounded-none shadow-none',
           isFirst && 'rounded-l-md',
           isLast && 'rounded-r-md',

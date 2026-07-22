@@ -35,6 +35,8 @@
     --accent-subtle: 205 81% 95.9%;
     --accent-hover: 207 72% 42%;
     --surface-sunken: 32 42.9% 93.1%;
+    --surface-inverse: 38 13.3% 11.8%;
+    --on-inverse: 33 52.9% 96.7%;
     --strong: 38 13.3% 11.8%;
     --muted-text: 34 12.7% 38.6%;
     --subtle: 34 12.9% 51.4%;
@@ -83,6 +85,8 @@
     --accent-subtle: 207 50% 14.1%;
     --accent-hover: 207 72% 42%;
     --surface-sunken: 30 17.6% 6.7%;
+    --surface-inverse: 33 52.9% 96.7%;
+    --on-inverse: 38 13.3% 11.8%;
     --strong: 34 46.7% 94.1%;
     --muted-text: 36 17.4% 63.9%;
     --subtle: 35 11.6% 48.8%;

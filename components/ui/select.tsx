@@ -28,7 +28,7 @@ function SelectValue({
       ref={ref}
       className={cn(
         'text-strong font-sans line-clamp-1 flex flex-row items-center gap-2 text-sm',
-        !value && 'text-muted-foreground',
+        !value && 'text-muted-text',
         className
       )}
       {...props}
@@ -50,19 +50,19 @@ function SelectTrigger({
     <SelectPrimitive.Trigger
       ref={ref}
       className={cn(
-        'border-border bg-background flex h-10 flex-row items-center justify-between gap-2 rounded-xl border px-3 py-2 shadow-card sm:h-9',
+        'border-border-subtle bg-card flex h-9 flex-row items-center justify-between gap-2 rounded-md border-[1.5px] px-3 py-2',
         Platform.select({
           web: cn(
             'focus-visible:border-border-brand focus-visible:ring-ring/40 aria-invalid:ring-destructive/20 aria-invalid:border-destructive w-fit whitespace-nowrap text-sm outline-none transition-[color,box-shadow] focus-visible:ring-[3px] disabled:cursor-not-allowed [&_svg]:pointer-events-none [&_svg]:shrink-0'
           ),
         }),
         props.disabled && 'opacity-50',
-        size === 'sm' && 'h-8 py-2 sm:py-1.5',
+        size === 'sm' && 'h-8 py-1.5',
         className
       )}
       {...props}>
       <>{children}</>
-      <Icon as={ChevronDown} aria-hidden={true} className="text-muted-foreground size-4" />
+      <Icon as={ChevronDown} aria-hidden={true} className="text-muted-text size-4" />
     </SelectPrimitive.Trigger>
   );
 }
@@ -93,7 +93,7 @@ function SelectContent({
             <TextClassContext.Provider value="text-strong font-sans">
               <SelectPrimitive.Content
                 className={cn(
-                  'border-border-subtle bg-card relative z-50 min-w-[8rem] rounded-2xl border shadow-card',
+                  'border-border-subtle bg-card relative z-50 min-w-[8rem] rounded-md border shadow-md',
                   Platform.select({
                     web: cn(
                       'animate-in fade-in-0 zoom-in-95 origin-(--radix-select-content-transform-origin) max-h-52 overflow-y-auto overflow-x-hidden',
@@ -144,7 +144,7 @@ function SelectLabel({
   return (
     <SelectPrimitive.Label
       className={cn(
-        'text-muted-foreground font-sans-semibold px-2 py-2 text-xs uppercase tracking-widest sm:py-1.5',
+        'text-muted-text font-sans-medium px-1.5 py-1 text-xs',
         className
       )}
       {...props}
@@ -160,7 +160,7 @@ function SelectItem({
   return (
     <SelectPrimitive.Item
       className={cn(
-        'active:bg-brand-subtle group relative flex w-full flex-row items-center gap-2 rounded-xl py-2 pl-2 pr-8 sm:py-1.5',
+        'active:bg-brand-subtle group relative flex w-full flex-row items-center gap-2 rounded-sm py-1.5 pl-2 pr-8',
         Platform.select({
           web: 'focus:bg-brand-subtle focus:text-strong *:[span]:last:flex *:[span]:last:items-center *:[span]:last:gap-2 cursor-default outline-none data-[disabled]:pointer-events-none [&_svg]:pointer-events-none',
         }),

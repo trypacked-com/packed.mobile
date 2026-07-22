@@ -40,9 +40,9 @@ function DialogOverlay({
     <FullWindowOverlay>
       <DialogPrimitive.Overlay
         className={cn(
-          'absolute bottom-0 left-0 right-0 top-0 flex items-center justify-center bg-strong/40 p-4',
+          'absolute bottom-0 left-0 right-0 top-0 flex items-center justify-center bg-black/40 p-4',
           Platform.select({
-            web: 'animate-in fade-in-0 fixed cursor-default [&>*]:cursor-auto',
+            web: 'animate-in fade-in-0 fixed cursor-default backdrop-blur-sm [&>*]:cursor-auto',
           }),
           className
         )}
@@ -78,7 +78,7 @@ function DialogContent({
         <TextClassContext.Provider value="text-strong font-sans">
           <DialogPrimitive.Content
             className={cn(
-              'border-border-subtle bg-card z-50 mx-auto flex w-full max-w-[calc(100%-2rem)] flex-col gap-4 rounded-2xl border p-6 shadow-card',
+              'border-border-subtle bg-card z-50 mx-auto flex w-full max-w-[calc(100%-2rem)] flex-col gap-4 rounded-xl border p-6 shadow-xl',
               Platform.select({
                 web: 'animate-in fade-in-0 zoom-in-95 duration-200 sm:max-w-lg',
               }),
@@ -96,7 +96,7 @@ function DialogContent({
               hitSlop={12}>
               <Icon
                 as={X}
-                className={cn('text-muted-foreground web:pointer-events-none size-4 shrink-0')}
+                className={cn('text-muted-text web:pointer-events-none size-4 shrink-0')}
               />
               <Text className="sr-only">Close</Text>
             </DialogPrimitive.Close>
@@ -108,19 +108,22 @@ function DialogContent({
 }
 
 function DialogHeader({ className, ...props }: ViewProps) {
-  return <View className={cn('flex flex-col gap-2', className)} {...props} />;
+  return <View className={cn('flex flex-col gap-1.5', className)} {...props} />;
 }
 
 function DialogFooter({ className, ...props }: ViewProps) {
   return (
-    <View className={cn('flex flex-row flex-wrap items-center justify-end gap-2', className)} {...props} />
+    <View
+      className={cn('flex flex-col-reverse items-center justify-end gap-2 sm:flex-row', className)}
+      {...props}
+    />
   );
 }
 
 function DialogTitle({ className, ...props }: React.ComponentProps<typeof DialogPrimitive.Title>) {
   return (
     <DialogPrimitive.Title
-      className={cn('text-strong font-sans-semibold text-lg leading-none', className)}
+      className={cn('text-strong font-serif text-lg leading-none', className)}
       {...props}
     />
   );
@@ -132,7 +135,7 @@ function DialogDescription({
 }: React.ComponentProps<typeof DialogPrimitive.Description>) {
   return (
     <DialogPrimitive.Description
-      className={cn('text-muted-foreground text-sm leading-relaxed', className)}
+      className={cn('text-muted-text text-sm leading-relaxed', className)}
       {...props}
     />
   );

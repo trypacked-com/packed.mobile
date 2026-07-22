@@ -80,14 +80,14 @@ function AccordionTrigger({
   return (
     <TextClassContext.Provider
       value={cn(
-        'text-strong text-left font-sans-semibold text-base',
-        Platform.select({ web: 'group-hover:text-brand' })
+        'text-strong text-left font-sans-medium text-sm',
+        Platform.select({ web: 'group-hover:text-link' })
       )}>
       <AccordionPrimitive.Header>
         <AccordionPrimitive.Trigger {...props} asChild>
           <Trigger
             className={cn(
-              'group flex-row items-start justify-between gap-4 rounded-xl py-4 active:opacity-70',
+              'group flex-row items-start justify-between gap-4 rounded-md py-4 active:opacity-70',
               Platform.select({
                 web: 'focus-visible:ring-ring/40 flex flex-1 outline-none transition-all focus-visible:ring-[3px] disabled:pointer-events-none [&[data-state=open]>svg]:rotate-180',
               }),
@@ -100,7 +100,7 @@ function AccordionTrigger({
                 as={ChevronDown}
                 size={16}
                 className={cn(
-                  'text-muted-foreground shrink-0',
+                  'text-muted-text shrink-0',
                   Platform.select({
                     web: 'pointer-events-none translate-y-0.5 transition-transform duration-200',
                   })
@@ -121,7 +121,7 @@ function AccordionContent({
 }: React.ComponentProps<typeof AccordionPrimitive.Content>) {
   const { isExpanded } = AccordionPrimitive.useItemContext();
   return (
-    <TextClassContext.Provider value="text-muted-foreground text-sm leading-relaxed">
+    <TextClassContext.Provider value="text-foreground text-sm leading-relaxed">
       <AccordionPrimitive.Content
         className={cn(
           'overflow-hidden',

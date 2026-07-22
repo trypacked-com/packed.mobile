@@ -6,22 +6,40 @@ import type { LucideIcon } from 'lucide-react-native';
 import * as React from 'react';
 import { View } from 'react-native';
 
-const alertVariants = cva('relative w-full rounded-2xl border px-4 pb-2 pt-3.5', {
-  variants: {
-    variant: {
-      default: 'border-border-brand bg-brand-subtle',
-      destructive: 'border-status-cancel-fg/20 bg-status-cancel-bg',
+const alertVariants = cva(
+  'flex w-full max-w-[360px] flex-row items-start gap-3 rounded-lg border-0 border-l-[3px] bg-card p-3.5 pl-4 shadow-lg',
+  {
+    variants: {
+      variant: {
+        default: 'border-l-brand',
+        destructive: 'border-l-status-cancel-fg',
+      },
     },
-  },
-  defaultVariants: {
-    variant: 'default',
-  },
-});
+    defaultVariants: {
+      variant: 'default',
+    },
+  }
+);
 
-const alertIconVariants = cva('size-4', {
+const alertIconWellVariants = cva(
+  'flex size-9 shrink-0 flex-row items-center justify-center rounded-md',
+  {
+    variants: {
+      variant: {
+        default: 'bg-brand-subtle',
+        destructive: 'bg-status-cancel-bg',
+      },
+    },
+    defaultVariants: {
+      variant: 'default',
+    },
+  }
+);
+
+const alertIconVariants = cva('size-5', {
   variants: {
     variant: {
-      default: 'text-brand',
+      default: 'text-link',
       destructive: 'text-status-cancel-fg',
     },
   },
@@ -34,7 +52,7 @@ const alertTextVariants = cva('text-sm', {
   variants: {
     variant: {
       default: 'text-strong',
-      destructive: 'text-status-cancel-fg',
+      destructive: 'text-strong',
     },
   },
   defaultVariants: {
@@ -52,10 +70,10 @@ function Alert({ className, variant, children, icon, iconClassName, ...props }: 
   return (
     <TextClassContext.Provider value={alertTextVariants({ variant })}>
       <View role="alert" className={cn(alertVariants({ variant }), className)} {...props}>
-        <View className="absolute left-3.5 top-3">
+        <View className={alertIconWellVariants({ variant })}>
           <Icon as={icon} className={cn(alertIconVariants({ variant }), iconClassName)} />
         </View>
-        {children}
+        <View className="min-w-0 flex-1">{children}</View>
       </View>
     </TextClassContext.Provider>
   );
@@ -64,24 +82,16 @@ function Alert({ className, variant, children, icon, iconClassName, ...props }: 
 function AlertTitle({ className, ...props }: React.ComponentProps<typeof Text>) {
   return (
     <Text
-      className={cn(
-        'mb-1 ml-0.5 min-h-4 pl-6 font-sans-semibold leading-none tracking-tight',
-        className
-      )}
+      className={cn('font-sans-bold text-sm leading-none text-strong', className)}
       {...props}
     />
   );
 }
 
 function AlertDescription({ className, ...props }: React.ComponentProps<typeof Text>) {
-  const textClass = React.useContext(TextClassContext);
   return (
     <Text
-      className={cn(
-        'text-muted-foreground ml-0.5 pb-1.5 pl-6 text-sm leading-relaxed',
-        textClass?.includes('text-status-cancel-fg') && 'text-status-cancel-fg/90',
-        className
-      )}
+      className={cn('text-muted-text mt-0.5 text-sm leading-snug', className)}
       {...props}
     />
   );
