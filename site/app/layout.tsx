@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 
-import { ThemeProvider } from "@/lib/theme-provider";
+import { ThemeProvider } from "@site/lib/theme-provider";
 
 import "./globals.css";
+import "./rnw.generated.css";
 
 export const metadata: Metadata = {
   title: "packed.mobile",
@@ -17,6 +18,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full font-sans antialiased">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "globalThis.__DEV__=globalThis.__DEV__??true;",
+          }}
+        />
+      </head>
       <body className="flex min-h-full flex-col">
         <ThemeProvider>{children}</ThemeProvider>
       </body>

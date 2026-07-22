@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { Logo } from "@/components/ui/logo";
+import { Logo } from "@site/components/ui/logo";
 
 import { ThemeToggle } from "./components/theme-toggle";
 

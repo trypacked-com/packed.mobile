@@ -5,18 +5,7 @@ import {
   ThemeToggle,
   Wordmark,
 } from '@/components/docs/chrome';
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from '@/components/ui/alert-dialog';
-import { Button } from '@/components/ui/button';
+import { AlertDialogPreview } from '@/components/docs/previews/alert-dialog';
 import { Text } from '@/components/ui/text';
 import { Stack } from 'expo-router';
 import { ScrollView, View } from 'react-native';
@@ -44,36 +33,7 @@ export default function AlertDialogScreen() {
             Preview
           </Text>
           <PreviewFrame>
-            <View className="w-full items-center gap-6">
-              <Text className="text-muted-foreground font-sans-semibold text-xs uppercase tracking-widest">
-                Lisbon weekend · Trip actions
-              </Text>
-
-              <AlertDialog>
-                <AlertDialogTrigger asChild>
-                  <Button variant="destructive">
-                    <Text>Remove trip</Text>
-                  </Button>
-                </AlertDialogTrigger>
-                <AlertDialogContent>
-                  <AlertDialogHeader>
-                    <AlertDialogTitle>Remove this trip?</AlertDialogTitle>
-                    <AlertDialogDescription>
-                      We'll stop watching <Text className="font-mono text-sm">TP1234</Text> and clear
-                      your Lisbon itinerary.
-                    </AlertDialogDescription>
-                  </AlertDialogHeader>
-                  <AlertDialogFooter>
-                    <AlertDialogCancel>
-                      <Text>Keep trip</Text>
-                    </AlertDialogCancel>
-                    <AlertDialogAction variant="destructive">
-                      <Text>Remove trip</Text>
-                    </AlertDialogAction>
-                  </AlertDialogFooter>
-                </AlertDialogContent>
-              </AlertDialog>
-            </View>
+            <AlertDialogPreview />
           </PreviewFrame>
         </View>
 
