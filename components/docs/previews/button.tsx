@@ -6,7 +6,7 @@ import { View } from 'react-native';
 
 export function ButtonPreview() {
   return (
-    <View className="items-center gap-3">
+    <View className="items-center gap-4">
       <View className="flex-row flex-wrap items-center justify-center gap-2">
         <Button>
           <Icon as={PlusIcon} />
@@ -18,13 +18,26 @@ export function ButtonPreview() {
         <Button variant="ghost">
           <Text>Cancel</Text>
         </Button>
-      </View>
-      <View className="flex-row flex-wrap items-center justify-center gap-2">
         <Button variant="destructive">
           <Text>Remove trip</Text>
         </Button>
         <Button variant="outline">
           <Text>View details</Text>
+        </Button>
+      </View>
+      <View className="flex-row flex-wrap items-center justify-center gap-2">
+        <Button size="icon" variant="ghost" aria-label="Notifications">
+          <Icon as={BellIcon} />
+        </Button>
+        <Button size="icon" variant="ghost" className="bg-brand-subtle" aria-label="Notifications">
+          <Icon as={BellIcon} className="text-link" />
+        </Button>
+        <Button size="icon" variant="secondary" aria-label="Notifications">
+          <Icon as={BellIcon} />
+        </Button>
+        <Button>
+          <Icon as={BellIcon} />
+          <Text>Notifications</Text>
         </Button>
       </View>
       <View className="flex-row flex-wrap items-center justify-center gap-2">
@@ -36,9 +49,6 @@ export function ButtonPreview() {
         </Button>
         <Button size="lg">
           <Text>Large</Text>
-        </Button>
-        <Button size="icon" variant="secondary" aria-label="Notifications">
-          <Icon as={BellIcon} />
         </Button>
       </View>
     </View>

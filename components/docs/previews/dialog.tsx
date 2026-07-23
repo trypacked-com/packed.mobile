@@ -9,44 +9,40 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 import { Text } from '@/components/ui/text';
 import { View } from 'react-native';
 
 export function DialogPreview() {
   return (
-    <View className="w-full items-center gap-6">
-      <View className="w-full gap-1">
-        <Text className="text-muted-foreground font-sans-semibold text-xs uppercase tracking-widest">
-          Lisbon weekend
-        </Text>
-        <Text className="text-strong font-serif text-xl tracking-tight">Jun 14 – Jun 16</Text>
-        <Text className="text-muted-foreground text-sm">
-          2 travelers · <Text className="font-mono text-sm">TP1234</Text>
-        </Text>
-      </View>
-
+    <View className="items-center">
       <Dialog>
         <DialogTrigger asChild>
-          <Button variant="outline" className="w-full">
-            <Text>Cancel trip</Text>
+          <Button>
+            <Text>Add flight</Text>
           </Button>
         </DialogTrigger>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Cancel this trip?</DialogTitle>
+            <DialogTitle>Add a flight</DialogTitle>
             <DialogDescription>
-              We'll remove Lisbon weekend from your list. You can always start a new plan later.
+              We'll watch it from here and keep you in the loop.
             </DialogDescription>
           </DialogHeader>
+          <View className="gap-2">
+            <Label nativeID="flight-number">Flight number</Label>
+            <Input aria-labelledby="flight-number" placeholder="TP1234" className="font-mono" />
+          </View>
           <DialogFooter>
             <DialogClose asChild>
-              <Button variant="secondary" className="min-w-28">
-                <Text>Keep trip</Text>
+              <Button variant="outline">
+                <Text>Cancel</Text>
               </Button>
             </DialogClose>
             <DialogClose asChild>
-              <Button className="min-w-28">
-                <Text>Cancel trip</Text>
+              <Button>
+                <Text>Add flight</Text>
               </Button>
             </DialogClose>
           </DialogFooter>

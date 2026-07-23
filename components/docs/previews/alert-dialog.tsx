@@ -15,11 +15,7 @@ import { View } from 'react-native';
 
 export function AlertDialogPreview() {
   return (
-    <View className="w-full items-center gap-6">
-      <Text className="text-muted-foreground font-sans-semibold text-xs uppercase tracking-widest">
-        Lisbon weekend · Trip actions
-      </Text>
-
+    <View className="items-center">
       <AlertDialog>
         <AlertDialogTrigger asChild>
           <Button variant="destructive">

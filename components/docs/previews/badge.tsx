@@ -6,7 +6,7 @@ export function BadgePreview() {
   return (
     <View className="w-full max-w-lg gap-6">
       <View className="gap-2">
-        <Text className="text-link font-sans-bold text-[0.6875rem] uppercase tracking-[0.12em]">
+        <Text className="font-sans-bold text-[0.6875rem] uppercase tracking-[0.12em] text-link">
           Status
         </Text>
         <View className="flex-row flex-wrap gap-2">
@@ -28,7 +28,7 @@ export function BadgePreview() {
         </View>
       </View>
       <View className="gap-2">
-        <Text className="text-link font-sans-bold text-[0.6875rem] uppercase tracking-[0.12em]">
+        <Text className="font-sans-bold text-[0.6875rem] uppercase tracking-[0.12em] text-link">
           Labels
         </Text>
         <View className="flex-row flex-wrap gap-2">
