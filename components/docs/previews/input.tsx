@@ -4,35 +4,20 @@ import { View } from 'react-native';
 
 export function InputPreview() {
   return (
-    <View className="w-full gap-4">
-      <View className="gap-1.5">
+    <View className="w-full max-w-xs gap-4">
+      <View className="gap-2">
         <Label nativeID="destination">Destination</Label>
-        <Input
-          accessibilityLabelledBy="destination"
-          placeholder="Tokyo, Japan"
-          defaultValue="Lisbon, Portugal"
-        />
+        <Input id="destination" aria-labelledby="destination" placeholder="Where to?" />
       </View>
-      <View className="gap-1.5">
-        <Label nativeID="confirmation">Confirmation code</Label>
+      <View className="gap-2">
+        <Label nativeID="flight-code">Flight code</Label>
         <Input
-          accessibilityLabelledBy="confirmation"
-          placeholder="ABC123"
-          autoCapitalize="characters"
+          id="flight-code"
+          aria-labelledby="flight-code"
           className="font-mono"
+          placeholder="TP1234"
+          defaultValue="TP1234"
         />
-      </View>
-      <View className="gap-1.5">
-        <Label nativeID="trip-name" variant="muted">
-          Trip name (optional)
-        </Label>
-        <Input accessibilityLabelledBy="trip-name" placeholder="Summer escape" />
-      </View>
-      <View className="gap-1.5">
-        <Label nativeID="locked-field" disabled>
-          Locked field
-        </Label>
-        <Input accessibilityLabelledBy="locked-field" editable={false} value="Read only" />
       </View>
     </View>
   );

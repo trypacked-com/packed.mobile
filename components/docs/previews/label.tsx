@@ -1,29 +1,12 @@
+import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { View } from 'react-native';
 
 export function LabelPreview() {
   return (
-    <View className="w-full gap-4">
-      <View className="gap-1.5">
-        <Label nativeID="destination">Destination</Label>
-        <View className="h-10 rounded-md border border-border bg-background px-3" />
-      </View>
-      <View className="gap-1.5">
-        <Label nativeID="departure-date">Departure date</Label>
-        <View className="h-10 rounded-md border border-border bg-background px-3" />
-      </View>
-      <View className="gap-1.5">
-        <Label nativeID="return-date" variant="muted">
-          Return date (optional)
-        </Label>
-        <View className="h-10 rounded-md border border-border bg-background px-3" />
-      </View>
-      <View className="gap-1.5">
-        <Label nativeID="trip-name" disabled>
-          Trip name
-        </Label>
-        <View className="h-10 rounded-md border border-border bg-muted px-3 opacity-50" />
-      </View>
+    <View className="w-full max-w-xs gap-2">
+      <Label nativeID="gate">Gate</Label>
+      <Input id="gate" aria-labelledby="gate" className="font-mono" defaultValue="B7" />
     </View>
   );
 }
