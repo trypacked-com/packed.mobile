@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "native-only-animated-view",
+  "type": "registry:component",
+  "title": "Native Only Animated View",
+  "description": "Packed Native Only Animated View — warm, token-driven UI for React Native.",
+  "dependencies": [
+    "react-native-reanimated"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "components/ui/native-only-animated-view.tsx",
+      "type": "registry:component",
+      "target": "components/ui/native-only-animated-view.tsx",
+      "content": "import { Platform, Pressable } from 'react-native';\nimport Animated from 'react-native-reanimated';\n\nconst AnimatedPressable = Animated.createAnimatedComponent(Pressable);\n\n/**\n * Wraps animated views that should only animate on native.\n */\nfunction NativeOnlyAnimatedView(\n  props:\n    | (React.ComponentProps<typeof Animated.View> &\n        React.RefAttributes<typeof Animated.View> & { as?: 'View' })\n    | (React.ComponentProps<typeof AnimatedPressable> &\n        React.RefAttributes<typeof AnimatedPressable> & { as: 'Pressable' })\n) {\n  if (Platform.OS === 'web') {\n    return <>{props.children as React.ReactNode}</>;\n  }\n\n  if (props.as === 'Pressable') {\n    return <AnimatedPressable {...props} />;\n  }\n\n  return <Animated.View {...props} />;\n}\n\nexport { NativeOnlyAnimatedView };\n"
+    }
+  ]
+}

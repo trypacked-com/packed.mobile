@@ -28,7 +28,8 @@ We ship UI as static JSON for React Native. Install components with the
 [React Native Reusables](https://www.reactnativereusables.com/) CLI — same
 registry idea as shadcn / packed.ui, NativeWind defaults.
 
-29 registry items. Lora headlines, Figtree UI, DM Mono for codes and times.
+31 registry items (27 components + `theme`, `utils`, and the shared `icon` /
+`native-only-animated-view` primitives). Lora headlines, Figtree UI, DM Mono for codes and times.
 Warm-tinted elevation, rounded corners, no cool grey. Tokens live in
 `global.css` + `tailwind.config.js`; maintainer rules in the
 **packed-mobile-maintainer** skill.
