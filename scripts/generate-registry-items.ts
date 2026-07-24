@@ -47,7 +47,6 @@ const PUBLISHED = new Set([...PUBLISHED_UI, ...PUBLISHED_BASE]);
 // Ambient peers every RN/Expo app already provides — never emitted as deps.
 const AMBIENT_PEERS = new Set(['react', 'react-dom', 'react-native', 'react-native-screens']);
 
-const RNR_BASE = 'https://reactnativereusables.com/r/nativewind';
 const UI_ALIAS_PREFIX = '@/components/ui/';
 const UTILS_ALIAS = '@/lib/utils';
 
@@ -62,10 +61,17 @@ function titleCase(name: string) {
     .join(' ');
 }
 
+function stripComments(source: string): string {
+  return source
+    .replace(/\/\*[\s\S]*?\*\//g, '') // block comments (incl. JSDoc)
+    .replace(/(^|[^:])\/\/[^\n]*/g, '$1'); // line comments, but not `://`
+}
+
 function importSpecifiers(source: string): string[] {
+  const code = stripComments(source);
   const specs = new Set<string>();
   for (const re of [FROM_RE, SIDE_EFFECT_RE]) {
-    for (const match of source.matchAll(re)) specs.add(match[1]);
+    for (const match of code.matchAll(re)) specs.add(match[1]);
   }
   return [...specs];
 }
@@ -92,7 +98,12 @@ function detectRegistryDeps(specs: string[]): string[] {
       deps.add('@packed-native/utils');
     } else if (spec.startsWith(UI_ALIAS_PREFIX)) {
       const dep = spec.slice(UI_ALIAS_PREFIX.length);
-      deps.add(PUBLISHED.has(dep) ? `@packed-native/${dep}` : `${RNR_BASE}/${dep}.json`);
+      if (!PUBLISHED.has(dep)) {
+        throw new Error(
+          `Unpublished component imported: "${spec}". Add "${dep}" to PUBLISHED_UI or PUBLISHED_BASE.`
+        );
+      }
+      deps.add(`@packed-native/${dep}`);
     }
   }
   return [...deps].sort();
