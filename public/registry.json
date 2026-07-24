@@ -14,9 +14,9 @@
         "react-native-reanimated"
       ],
       "registryDependencies": [
+        "@packed-native/icon",
         "@packed-native/text",
-        "@packed-native/utils",
-        "https://reactnativereusables.com/r/nativewind/icon.json"
+        "@packed-native/utils"
       ],
       "files": [
         {
@@ -36,9 +36,9 @@
         "lucide-react-native"
       ],
       "registryDependencies": [
+        "@packed-native/icon",
         "@packed-native/text",
-        "@packed-native/utils",
-        "https://reactnativereusables.com/r/nativewind/icon.json"
+        "@packed-native/utils"
       ],
       "files": [
         {
@@ -59,9 +59,9 @@
       ],
       "registryDependencies": [
         "@packed-native/button",
+        "@packed-native/native-only-animated-view",
         "@packed-native/text",
-        "@packed-native/utils",
-        "https://reactnativereusables.com/r/nativewind/native-only-animated-view.json"
+        "@packed-native/utils"
       ],
       "files": [
         {
@@ -180,8 +180,8 @@
         "lucide-react-native"
       ],
       "registryDependencies": [
-        "@packed-native/utils",
-        "https://reactnativereusables.com/r/nativewind/icon.json"
+        "@packed-native/icon",
+        "@packed-native/utils"
       ],
       "files": [
         {
@@ -221,10 +221,10 @@
         "react-native-reanimated"
       ],
       "registryDependencies": [
+        "@packed-native/icon",
+        "@packed-native/native-only-animated-view",
         "@packed-native/text",
-        "@packed-native/utils",
-        "https://reactnativereusables.com/r/nativewind/icon.json",
-        "https://reactnativereusables.com/r/nativewind/native-only-animated-view.json"
+        "@packed-native/utils"
       ],
       "files": [
         {
@@ -245,16 +245,37 @@
         "react-native-reanimated"
       ],
       "registryDependencies": [
+        "@packed-native/icon",
+        "@packed-native/native-only-animated-view",
         "@packed-native/text",
-        "@packed-native/utils",
-        "https://reactnativereusables.com/r/nativewind/icon.json",
-        "https://reactnativereusables.com/r/nativewind/native-only-animated-view.json"
+        "@packed-native/utils"
       ],
       "files": [
         {
           "path": "components/ui/dropdown-menu.tsx",
           "type": "registry:ui",
           "target": "components/ui/dropdown-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "icon",
+      "type": "registry:component",
+      "title": "Icon",
+      "description": "Packed Icon — warm, token-driven UI for React Native.",
+      "dependencies": [
+        "lucide-react-native",
+        "nativewind"
+      ],
+      "registryDependencies": [
+        "@packed-native/text",
+        "@packed-native/utils"
+      ],
+      "files": [
+        {
+          "path": "components/ui/icon.tsx",
+          "type": "registry:component",
+          "target": "components/ui/icon.tsx"
         }
       ]
     },
@@ -296,6 +317,23 @@
       ]
     },
     {
+      "name": "native-only-animated-view",
+      "type": "registry:component",
+      "title": "Native Only Animated View",
+      "description": "Packed Native Only Animated View — warm, token-driven UI for React Native.",
+      "dependencies": [
+        "react-native-reanimated"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/ui/native-only-animated-view.tsx",
+          "type": "registry:component",
+          "target": "components/ui/native-only-animated-view.tsx"
+        }
+      ]
+    },
+    {
       "name": "popover",
       "type": "registry:ui",
       "title": "Popover",
@@ -305,9 +343,9 @@
         "react-native-reanimated"
       ],
       "registryDependencies": [
+        "@packed-native/native-only-animated-view",
         "@packed-native/text",
-        "@packed-native/utils",
-        "https://reactnativereusables.com/r/nativewind/native-only-animated-view.json"
+        "@packed-native/utils"
       ],
       "files": [
         {
@@ -367,10 +405,10 @@
         "react-native-reanimated"
       ],
       "registryDependencies": [
+        "@packed-native/icon",
+        "@packed-native/native-only-animated-view",
         "@packed-native/text",
-        "@packed-native/utils",
-        "https://reactnativereusables.com/r/nativewind/icon.json",
-        "https://reactnativereusables.com/r/nativewind/native-only-animated-view.json"
+        "@packed-native/utils"
       ],
       "files": [
         {
@@ -525,9 +563,9 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
+        "@packed-native/icon",
         "@packed-native/text",
-        "@packed-native/utils",
-        "https://reactnativereusables.com/r/nativewind/icon.json"
+        "@packed-native/utils"
       ],
       "files": [
         {
@@ -547,10 +585,10 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
+        "@packed-native/icon",
         "@packed-native/text",
         "@packed-native/toggle",
-        "@packed-native/utils",
-        "https://reactnativereusables.com/r/nativewind/icon.json"
+        "@packed-native/utils"
       ],
       "files": [
         {
@@ -570,9 +608,9 @@
         "react-native-reanimated"
       ],
       "registryDependencies": [
+        "@packed-native/native-only-animated-view",
         "@packed-native/text",
-        "@packed-native/utils",
-        "https://reactnativereusables.com/r/nativewind/native-only-animated-view.json"
+        "@packed-native/utils"
       ],
       "files": [
         {

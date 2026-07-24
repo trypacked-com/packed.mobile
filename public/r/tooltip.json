@@ -9,9 +9,9 @@
     "react-native-reanimated"
   ],
   "registryDependencies": [
+    "@packed-native/native-only-animated-view",
     "@packed-native/text",
-    "@packed-native/utils",
-    "https://reactnativereusables.com/r/nativewind/native-only-animated-view.json"
+    "@packed-native/utils"
   ],
   "files": [
     {

@@ -37,6 +37,13 @@ export const PUBLISHED_UI: string[] = [
   'tooltip',
 ];
 
+// Lower-level components we mirror so consumer installs resolve entirely on our
+// own registry instead of reaching out to reactnativereusables.com. Installable
+// but kept out of the showcase catalog (typed registry:component).
+export const PUBLISHED_BASE: string[] = ['icon', 'native-only-animated-view'];
+
+const PUBLISHED = new Set([...PUBLISHED_UI, ...PUBLISHED_BASE]);
+
 // Ambient peers every RN/Expo app already provides — never emitted as deps.
 const AMBIENT_PEERS = new Set(['react', 'react-dom', 'react-native', 'react-native-screens']);
 
@@ -85,18 +92,18 @@ function detectRegistryDeps(specs: string[]): string[] {
       deps.add('@packed-native/utils');
     } else if (spec.startsWith(UI_ALIAS_PREFIX)) {
       const dep = spec.slice(UI_ALIAS_PREFIX.length);
-      deps.add(PUBLISHED_UI.includes(dep) ? `@packed-native/${dep}` : `${RNR_BASE}/${dep}.json`);
+      deps.add(PUBLISHED.has(dep) ? `@packed-native/${dep}` : `${RNR_BASE}/${dep}.json`);
     }
   }
   return [...deps].sort();
 }
 
-export function buildRegistryItem(name: string, source: string) {
+export function buildRegistryItem(name: string, source: string, type = 'registry:ui') {
   const file = `${name}.tsx`;
   const specs = importSpecifiers(source);
   return {
     name,
-    type: 'registry:ui',
+    type,
     title: titleCase(name),
     description: `Packed ${titleCase(name)} — warm, token-driven UI for React Native.`,
     dependencies: detectNpmDeps(specs),
@@ -104,7 +111,7 @@ export function buildRegistryItem(name: string, source: string) {
     files: [
       {
         path: `components/ui/${file}`,
-        type: 'registry:ui',
+        type,
         target: `components/ui/${file}`,
       },
     ],
@@ -114,11 +121,16 @@ export function buildRegistryItem(name: string, source: string) {
 if (import.meta.main) {
   await mkdir(itemsDir, { recursive: true });
 
-  for (const name of PUBLISHED_UI) {
+  const targets = [
+    ...PUBLISHED_UI.map((name) => [name, 'registry:ui'] as const),
+    ...PUBLISHED_BASE.map((name) => [name, 'registry:component'] as const),
+  ];
+
+  for (const [name, type] of targets) {
     const source = await readFile(resolve(uiDir, `${name}.tsx`), 'utf8');
-    const item = buildRegistryItem(name, source);
+    const item = buildRegistryItem(name, source, type);
     await writeFile(resolve(itemsDir, `${name}.json`), `${JSON.stringify(item, null, 2)}\n`, 'utf8');
   }
 
-  console.log(`wrote ${PUBLISHED_UI.length} registry item manifest(s)`);
+  console.log(`wrote ${targets.length} registry item manifest(s)`);
 }

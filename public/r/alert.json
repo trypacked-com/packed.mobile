@@ -9,9 +9,9 @@
     "lucide-react-native"
   ],
   "registryDependencies": [
+    "@packed-native/icon",
     "@packed-native/text",
-    "@packed-native/utils",
-    "https://reactnativereusables.com/r/nativewind/icon.json"
+    "@packed-native/utils"
   ],
   "files": [
     {
