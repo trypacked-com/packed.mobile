@@ -6,6 +6,7 @@
     "dev": "expo start -c",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
+    "test": "bun test scripts",
     "android": "expo start -c --android",
     "ios": "expo start -c --ios",
     "dev:site": "bun run build:rnw-css && bun run --cwd site dev",
