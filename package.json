@@ -15,6 +15,7 @@
     "registry:validate": "bun run scripts/validate-registry.ts",
     "sync:site-registry": "bun run scripts/sync-site-registry.ts",
     "build:rnw-css": "bun run scripts/build-rnw-css.ts",
+    "theme:build": "bun run scripts/build-theme.ts",
     "build:site": "bun run build:registry && bun run sync:site-registry && bun run build:rnw-css && bun run --cwd site build",
     "clean": "rm -rf .expo node_modules site/node_modules site/.next site/out"
   },
