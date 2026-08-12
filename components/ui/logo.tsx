@@ -1,7 +1,7 @@
 import { cn } from '@/lib/utils';
 import { useColorScheme } from 'nativewind';
 import { View, type ViewProps } from 'react-native';
-import Svg, { Path, Rect } from 'react-native-svg';
+import Svg, { Path } from 'react-native-svg';
 
 type LogoProps = ViewProps & {
   /** `auto` follows light/dark theme; `brand` and `inverse` are fixed. */
@@ -61,24 +61,27 @@ function Logo({ variant = 'auto', size = 'default', className, style, ...props }
       className={cn('shrink-0', className)}
       style={[{ width: dimension, height: dimension }, style]}
       {...props}>
-      <Svg width={dimension} height={dimension} viewBox="0 0 48 48" fill="none">
+      <Svg width={dimension} height={dimension} viewBox="0 0 500 500" fill="none">
         <Path
-          d="M17.5 15 V12 A5 5 0 0 1 22.5 7 H25.5 A5 5 0 0 1 30.5 12 V15"
+          d="M179.688 164.062v-31.25a50.78 50.78 0 0 1 50.781-50.78h39.062a50.78 50.78 0 0 1 50.781 50.78v31.25"
           stroke={colors.stroke}
-          strokeWidth={3.2}
+          strokeWidth={33.6}
           strokeLinecap="round"
           fill="none"
         />
-        <Rect x={7} y={15} width={34} height={26} rx={6.5} fill={colors.body} />
-        <Rect
-          x={7}
-          y={22.6}
-          width={34}
-          height={3.2}
+        <Path
+          d="M335.938 164.062H164.062c-38.832 0-70.312 31.48-70.312 70.313v117.187c0 38.833 31.48 70.313 70.312 70.313h171.876c38.832 0 70.312-31.48 70.312-70.313V234.375c0-38.833-31.48-70.313-70.312-70.313"
+          fill={colors.body}
+        />
+        <Path
+          d="M406.25 248.438H93.75v31.25h312.5z"
           fill={colors.band}
           opacity={colors.bandOpacity}
         />
-        <Rect x={18.8} y={21.4} width={10.4} height={4.8} rx={2} fill={colors.latch} />
+        <Path
+          d="M285.938 239.062h-71.875c-11.219 0-20.313 9.095-20.313 20.313v9.375c0 11.218 9.094 20.312 20.313 20.312h71.875c11.218 0 20.312-9.094 20.312-20.312v-9.375c0-11.218-9.094-20.313-20.312-20.313"
+          fill={colors.latch}
+        />
       </Svg>
     </View>
   );
