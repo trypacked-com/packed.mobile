@@ -28,7 +28,7 @@
         {
           "image": "./assets/images/splash.png",
           "resizeMode": "contain",
-          "backgroundColor": "#ED5418"
+          "backgroundColor": "#FBF7F2"
         }
       ],
       "expo-status-bar",
