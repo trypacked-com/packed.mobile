@@ -13,7 +13,7 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.trypacked.mobile",
-      "buildNumber": "2"
+      "buildNumber": "3"
     },
     "android": {
       "package": "com.trypacked.mobile",
