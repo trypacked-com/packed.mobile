@@ -13,13 +13,14 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.trypacked.mobile",
-      "buildNumber": "3"
+      "buildNumber": "4"
     },
     "android": {
       "package": "com.trypacked.mobile",
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ED5418"
+        "monochromeImage": "./assets/images/adaptive-icon-monochrome.png",
+        "backgroundColor": "#FBF7F2"
       }
     },
     "plugins": [

@@ -8,6 +8,7 @@
     "typecheck": "tsc --noEmit",
     "test": "bun test scripts",
     "android": "expo start -c --android",
+    "android:device": "expo run:android --device",
     "ios": "expo start -c --ios",
     "dev:site": "bun run build:rnw-css && bun run --cwd site dev",
     "registry:generate": "bun run scripts/generate-registry-items.ts",
