@@ -5,14 +5,53 @@ updates:
     schedule:
       interval: "weekly"
     open-pull-requests-limit: 5
+    ignore:
+      - dependency-name: expo
+      - dependency-name: "expo-*"
+      - dependency-name: "@expo/*"
+      - dependency-name: react
+      - dependency-name: react-dom
+      - dependency-name: react-native
+      - dependency-name: "react-native-*"
+      - dependency-name: "@react-native-*/*"
+      - dependency-name: "@types/react"
+      - dependency-name: eslint-config-expo
+      - dependency-name: typescript
+      - dependency-name: jest-expo
 
   - package-ecosystem: "bun"
     directory: "/site"
     schedule:
       interval: "weekly"
     open-pull-requests-limit: 5
+    ignore:
+      - dependency-name: expo
+      - dependency-name: "expo-*"
+      - dependency-name: "@expo/*"
+      - dependency-name: react
+      - dependency-name: react-dom
+      - dependency-name: react-native
+      - dependency-name: "react-native-*"
+      - dependency-name: "@react-native-*/*"
+      - dependency-name: "@types/react"
+      - dependency-name: eslint-config-expo
+      - dependency-name: typescript
+      - dependency-name: jest-expo
 
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
+      ignore:
+      - dependency-name: expo
+      - dependency-name: "expo-*"
+      - dependency-name: "@expo/*"
+      - dependency-name: react
+      - dependency-name: react-dom
+      - dependency-name: react-native
+      - dependency-name: "react-native-*"
+      - dependency-name: "@react-native-*/*"
+      - dependency-name: "@types/react"
+      - dependency-name: eslint-config-expo
+      - dependency-name: typescript
+      - dependency-name: jest-expo
