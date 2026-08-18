@@ -14,7 +14,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: cn(
-          'bg-brand active:bg-brand-hover shadow-brand',
+          'bg-brand active:bg-brand-hover shadow-cta',
           Platform.select({ web: 'hover:bg-brand-hover' })
         ),
         destructive: cn(
