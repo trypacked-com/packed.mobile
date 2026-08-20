@@ -4,31 +4,34 @@
     "slug": "packed-mobile",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
     "scheme": "packed-mobile",
-    "userInterfaceStyle": "automatic",
+    "userInterfaceStyle": "light",
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.trypacked.mobile",
-      "buildNumber": "4"
-    },
-    "android": {
-      "package": "com.trypacked.mobile",
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "monochromeImage": "./assets/images/adaptive-icon-monochrome.png",
-        "backgroundColor": "#FBF7F2"
+      "icon": "./assets/icons/AppIcon-ui-lib.icon",
+      "bundleIdentifier": "com.joshbatley.packedui",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
       }
+    },
+   "android": {
+      "package": "com.joshbatley.packedui",
+      "adaptiveIcon": {
+        "backgroundColor": "#FBF7F2",
+        "foregroundImage": "./assets/icons/icon-android-foreground.png",
+        "monochromeImage": "./assets/icons/icon-android-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
     },
     "plugins": [
       "expo-router",
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/splash.png",
+          "image": "./assets/splash-icon.png",
           "resizeMode": "contain",
           "backgroundColor": "#FBF7F2"
         }
@@ -37,7 +40,7 @@
       "expo-font"
     ],
     "web": {
-      "favicon": "./assets/images/favicon.svg"
+      "favicon": "./assets/favicon.png"
     },
     "experiments": {
       "typedRoutes": true
