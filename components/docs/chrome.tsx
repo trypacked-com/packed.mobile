@@ -2,9 +2,9 @@ import { Button } from '@/components/ui/button';
 import { Icon } from '@/components/ui/icon';
 import { Logo } from '@/components/ui/logo';
 import { Text } from '@/components/ui/text';
+import { useTheme } from '@/lib/theme-provider';
 import { Link } from 'expo-router';
 import { MoonStarIcon, SunIcon } from 'lucide-react-native';
-import { useColorScheme } from 'nativewind';
 import type { ReactNode } from 'react';
 import { Pressable, View } from 'react-native';
 
@@ -25,15 +25,15 @@ const THEME_ICONS = {
 };
 
 export function ThemeToggle() {
-  const { colorScheme, toggleColorScheme } = useColorScheme();
+  const { theme, setTheme } = useTheme();
 
   return (
     <Button
-      onPressIn={toggleColorScheme}
+      onPressIn={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
       size="icon"
       variant="ghost"
       className="ios:size-9 rounded-full web:mx-4">
-      <Icon as={THEME_ICONS[colorScheme ?? 'light']} className="size-5" />
+      <Icon as={THEME_ICONS[theme]} className="size-5" />
     </Button>
   );
 }

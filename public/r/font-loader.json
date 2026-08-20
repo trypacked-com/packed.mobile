@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "font-loader",
+  "type": "registry:lib",
+  "title": "Font Loader",
+  "description": "Loads Figtree, Lora, and DM Mono and holds the splash until they are ready. Wrap your root layout once.",
+  "dependencies": [
+    "@expo-google-fonts/dm-mono",
+    "@expo-google-fonts/figtree",
+    "@expo-google-fonts/lora",
+    "expo-font",
+    "expo-splash-screen"
+  ],
+  "files": [
+    {
+      "path": "lib/font-loader.tsx",
+      "type": "registry:lib",
+      "target": "lib/font-loader.tsx",
+      "content": "import { DMMono_400Regular, DMMono_500Medium } from '@expo-google-fonts/dm-mono';\nimport {\n  Figtree_400Regular,\n  Figtree_500Medium,\n  Figtree_600SemiBold,\n  Figtree_700Bold,\n} from '@expo-google-fonts/figtree';\nimport { Lora_600SemiBold, Lora_700Bold } from '@expo-google-fonts/lora';\nimport { useFonts } from 'expo-font';\nimport * as SplashScreen from 'expo-splash-screen';\nimport * as React from 'react';\n\nSplashScreen.preventAutoHideAsync();\n\nexport function FontLoader({ children }: { children: React.ReactNode }) {\n  const [loaded] = useFonts({\n    Figtree_400Regular,\n    Figtree_500Medium,\n    Figtree_600SemiBold,\n    Figtree_700Bold,\n    Lora_600SemiBold,\n    Lora_700Bold,\n    DMMono_400Regular,\n    DMMono_500Medium,\n  });\n\n  React.useEffect(() => {\n    if (loaded) {\n      SplashScreen.hideAsync();\n    }\n  }, [loaded]);\n\n  if (!loaded) return null;\n  return children;\n}\n"
+    }
+  ]
+}

@@ -259,6 +259,26 @@
       ]
     },
     {
+      "name": "font-loader",
+      "type": "registry:lib",
+      "title": "Font Loader",
+      "description": "Loads Figtree, Lora, and DM Mono and holds the splash until they are ready. Wrap your root layout once.",
+      "dependencies": [
+        "@expo-google-fonts/dm-mono",
+        "@expo-google-fonts/figtree",
+        "@expo-google-fonts/lora",
+        "expo-font",
+        "expo-splash-screen"
+      ],
+      "files": [
+        {
+          "path": "lib/font-loader.tsx",
+          "type": "registry:lib",
+          "target": "lib/font-loader.tsx"
+        }
+      ]
+    },
+    {
       "name": "icon",
       "type": "registry:component",
       "title": "Icon",
@@ -550,6 +570,31 @@
           "path": "tailwind.config.js",
           "type": "registry:file",
           "target": "tailwind.config.js"
+        }
+      ]
+    },
+    {
+      "name": "theme-provider",
+      "type": "registry:lib",
+      "title": "Theme Provider",
+      "description": "Light/dark switching for Packed NativeWind tokens. Wrap your app once. Defaults to light.",
+      "dependencies": [
+        "expo-router",
+        "nativewind"
+      ],
+      "registryDependencies": [
+        "@packed-native/theme"
+      ],
+      "files": [
+        {
+          "path": "lib/theme-provider.tsx",
+          "type": "registry:lib",
+          "target": "lib/theme-provider.tsx"
+        },
+        {
+          "path": "lib/theme.ts",
+          "type": "registry:lib",
+          "target": "lib/theme.ts"
         }
       ]
     },
